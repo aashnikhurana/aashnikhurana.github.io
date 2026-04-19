@@ -62,17 +62,18 @@ import Base from '@/layouts/Base.astro'
       <!-- Right: rotating albumin image -->
       <div class="hero-image-col" style="position: relative; display: flex; align-items: center; justify-content: center;">
         <div style="position: relative; width: 40vw; max-width: 520px;">
-          <!-- Rotating image -->
+          <!-- 3D Interactive Model -->
           <div
-            class="hero-image-rotate"
-            style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden;"
+            style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); filter: brightness(0.85) saturate(1.1); cursor: grab;"
           >
-            <!-- TODO: replace with 05a_albumin_dmts_binding.jpg when available — currently using hero_albumin.jpg -->
-            <img
-              src="/images/thesis/hero_albumin.jpg"
-              alt="Bovine serum albumin protein structure showing DMTS binding pose, rendered in PyMOL"
-              style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.85) saturate(1.1); mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%);"
-            />
+            <div 
+              style="width: 100%; height: 100%; position: relative;"
+              class="viewer_3Dmoljs"
+              data-pdb="1ao6"
+              data-backgroundcolor="#0E0E10"
+              data-style="cartoon:color=#c583ab"
+            ></div>
+            <script is:inline src="https://3Dmol.org/build/3Dmol-min.js"></script>
           </div>
 
           <!-- Image caption — does NOT rotate -->
