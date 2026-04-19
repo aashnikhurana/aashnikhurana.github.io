@@ -1,0 +1,201 @@
+---
+import Base from './Base.astro'
+
+interface Props {
+  title: string
+  subtitle: string
+  tags: string[]
+  year: string
+  description?: string
+  prevStudy?: { title: string; href: string }
+  nextStudy?: { title: string; href: string }
+}
+
+const {
+  title,
+  subtitle,
+  tags,
+  year,
+  description,
+  prevStudy,
+  nextStudy,
+} = Astro.props
+
+const metaDescription = description ?? `${title} — ${subtitle}`
+---
+
+<Base title={title} description={metaDescription}>
+  <article style="max-width: 1100px; margin: 0 auto; padding: 80px 7vw 120px;">
+
+    <!-- Breadcrumb -->
+    <nav aria-label="Breadcrumb" style="margin-bottom: 48px;">
+      <a
+        href="/research"
+        style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 300ms cubic-bezier(0.2, 0, 0, 1);"
+        class="breadcrumb-link"
+      >
+        &larr; Research
+      </a>
+    </nav>
+
+    <!-- Header -->
+    <header style="margin-bottom: 48px;">
+      <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5vw, 56px); color: var(--text); line-height: 1.1; margin: 0 0 16px;">
+        {title}
+      </h1>
+      <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin: 0 0 20px; line-height: 1.5;">
+        {subtitle}
+      </p>
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+        {tags.join(' \u00B7 ')}
+      </div>
+    </header>
+
+    <hr style="border: none; border-top: 1px solid var(--rule); margin: 0 0 48px;" />
+
+    <!-- Two-column: prose + sidebar -->
+    <div class="cs-grid" style="display: grid; grid-template-columns: 1fr 240px; gap: 80px; align-items: start;">
+
+      <!-- Main prose -->
+      <div class="cs-prose" style="max-width: 720px;">
+        <slot />
+      </div>
+
+      <!-- Sidebar -->
+      <aside class="cs-sidebar" style="position: sticky; top: 120px;">
+        <slot name="sidebar" />
+      </aside>
+
+    </div>
+
+    <!-- Pagination -->
+    {(prevStudy || nextStudy) && (
+      <>
+        <hr style="border: none; border-top: 1px solid var(--rule); margin: 80px 0 40px;" />
+        <nav
+          style="display: flex; justify-content: space-between; align-items: center; gap: 24px;"
+          aria-label="Case study navigation"
+        >
+          <div>
+            {prevStudy && (
+              <a
+                href={prevStudy.href}
+                class="pagination-link"
+                style="font-family: Inter, sans-serif; font-style: italic; font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);"
+              >
+                &larr; {prevStudy.title}
+              </a>
+            )}
+          </div>
+          <div>
+            {nextStudy && (
+              <a
+                href={nextStudy.href}
+                class="pagination-link"
+                style="font-family: Inter, sans-serif; font-style: italic; font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1); text-align: right;"
+              >
+                {nextStudy.title} &rarr;
+              </a>
+            )}
+          </div>
+        </nav>
+      </>
+    )}
+
+  </article>
+</Base>
+
+<style>
+  /* Prose typography */
+  .cs-prose :global(p) {
+    font-family: Inter, sans-serif;
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--text);
+    margin-bottom: 32px;
+  }
+
+  .cs-prose :global(h2) {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-weight: 400;
+    font-size: 28px;
+    color: var(--text);
+    margin-top: 48px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+  }
+
+  .cs-prose :global(h3) {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text);
+    letter-spacing: 0.05em;
+    margin-top: 40px;
+    margin-bottom: 16px;
+  }
+
+  /* Image + caption */
+  .cs-prose :global(.cs-image-wrap) {
+    margin: 40px 0 48px;
+  }
+
+  .cs-prose :global(.cs-image-wrap img) {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+    display: block;
+  }
+
+  .cs-prose :global(.cs-caption) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    margin-top: 12px;
+    line-height: 1.5;
+  }
+
+  /* Sidebar typography */
+  .cs-sidebar :global(.sidebar-block) {
+    margin-bottom: 24px;
+  }
+
+  .cs-sidebar :global(.sidebar-label) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 4px;
+    display: block;
+  }
+
+  .cs-sidebar :global(.sidebar-value) {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  /* Hover states */
+  .breadcrumb-link:hover {
+    color: var(--accent) !important;
+  }
+
+  .pagination-link:hover {
+    color: var(--accent) !important;
+  }
+
+  /* Mobile: sidebar below prose */
+  @media (max-width: 767px) {
+    .cs-grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+    }
+
+    .cs-sidebar {
+      position: static !important;
+    }
+  }
+</style>

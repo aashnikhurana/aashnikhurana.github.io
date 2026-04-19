@@ -1,0 +1,108 @@
+---
+import Base from '@/layouts/Base.astro'
+---
+
+<Base
+  title="About"
+  description="Aashni Khurana — MS in Chemistry from Sam Houston State, Research Scientist at UC San Diego Health. Bioanalytical methods, volatile drug candidates, iPSC models."
+>
+
+  <div style="max-width: 960px; margin: 0 auto; padding: 80px 7vw 120px;">
+
+    <!-- H1 -->
+    <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(40px, 6vw, 64px); color: var(--text); line-height: 1.1; margin: 0 0 64px;">
+      About
+    </h1>
+
+    <!-- Two-column: bio left, headshot right -->
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 320px; gap: 80px; align-items: start; margin-bottom: 80px;">
+
+      <!-- Left: bio -->
+      <div>
+        <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
+          Aashni Khurana is an analytical and bioanalytical scientist with four years of combined experience spanning regulated cGMP pharmaceutical manufacturing and academic research. She holds an MS in Chemistry from Sam Houston State University and currently works as a Research Scientist at UC San Diego Health, Department of Anesthesiology, in the laboratory of Dr. Hemal Patel.
+        </p>
+        <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
+          Her research interests center on bioanalytical methods for molecules that resist standard measurement — volatile drug candidates, stem-cell-derived neurons, and the bloodborne signals that connect mind and body. At UCSD Health, she is building an iPSC-derived motor neuron platform to study how meditation-induced plasma factors reshape neuronal bioenergetics. Her master&rsquo;s thesis characterized dimethyl disulfide (DMDS) protein binding for the federally funded DMTS cyanide antidote program, requiring novel assay design to work around extreme analyte volatility.
+        </p>
+        <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
+          She is increasingly interested in AI and computational tools as accelerants for analytical chemistry workflows, from method development to data interpretation. Her international research experience includes a six-institution study abroad in Hungary (2024) supported by the Welch Foundation and COSET, and prior research and industrial experience in India. She has taught 100+ undergraduates per semester across General Chemistry, Biochemistry, and Instrumental Analytical Chemistry laboratories at SHSU.
+        </p>
+
+        <!-- CV download -->
+        <div style="margin-top: 40px;">
+          <a
+            href="/cv/aashni-khurana-cv.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="display: inline-block; font-family: Inter, sans-serif; font-size: 14px; color: var(--accent); border: 1px solid var(--accent); padding: 12px 24px; text-decoration: none; transition: background 400ms cubic-bezier(0.2, 0, 0, 1), color 400ms cubic-bezier(0.2, 0, 0, 1);"
+            class="cv-btn"
+          >
+            Download CV &rarr;
+          </a>
+          <!-- TODO: Aashni — drop aashni-khurana-cv.pdf into public/cv/ before deploying -->
+        </div>
+      </div>
+
+      <!-- Right: headshot -->
+      <div>
+        <!-- TODO: Aashni — add headshot.jpg to public/images/ and uncomment the img tag below -->
+        <!--
+        <img
+          src="/images/headshot.jpg"
+          alt="Aashni Khurana, Research Scientist at UC San Diego Health"
+          style="width: 100%; height: auto; border-radius: 2px; filter: brightness(0.9) saturate(1.05);"
+        />
+        -->
+        <div style="width: 100%; aspect-ratio: 3/4; border: 1px dashed rgba(155, 58, 74, 0.4); display: flex; align-items: center; justify-content: center; background: rgba(155, 58, 74, 0.03);">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-align: center; padding: 16px;">
+            <!-- TODO: Aashni — add headshot.jpg to public/images/ -->
+            HEADSHOT PLACEHOLDER
+          </span>
+        </div>
+      </div>
+
+    </div>
+
+    <hr style="border: none; border-top: 1px solid var(--rule); margin-bottom: 64px;" />
+
+    <!-- Timeline -->
+    <div style="margin-bottom: 64px;">
+      <p style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 24px;">
+        TIMELINE
+      </p>
+      <div>
+        {[
+          { year: '2025 –', label: 'Research Scientist, UC San Diego Health' },
+          { year: '2023 – 2025', label: 'Lab Manager & Research Assistant, Sam Houston State University' },
+          { year: '2025', label: 'MS Chemistry, Sam Houston State University' },
+          { year: '2024', label: 'Chemical Imagination & Innovation study abroad, Hungary (6 institutions)' },
+          { year: '2023', label: 'Intern Biochemist, Birla Institute of Scientific Research, India' },
+          { year: '2022 – 2023', label: 'Associate Scientist I, Anant Pharmaceuticals, India' },
+          { year: '2022', label: 'BS Chemistry (Honors), Panjab University, India' },
+        ].map((entry) => (
+          <div style="display: flex; gap: 32px; padding: 16px 0; border-top: 1px solid var(--rule);">
+            <span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--text-muted); min-width: 100px; flex-shrink: 0; padding-top: 2px;">{entry.year}</span>
+            <span style="font-family: Inter, sans-serif; font-size: 15px; color: var(--text); line-height: 1.5;">{entry.label}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+  </div>
+
+</Base>
+
+<style>
+  .cv-btn:hover {
+    background: var(--accent) !important;
+    color: var(--text) !important;
+  }
+
+  @media (max-width: 767px) {
+    .about-grid {
+      grid-template-columns: 1fr !important;
+      gap: 48px !important;
+    }
+  }
+</style>

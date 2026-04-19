@@ -1,0 +1,164 @@
+---
+// Scroll-triggered collapsing nav — hidden until user scrolls past hero sentinel
+---
+
+<nav
+  id="site-nav"
+  class="nav-collapsing"
+  style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(14, 14, 16, 0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--rule); padding: 16px 7vw;"
+  aria-label="Site navigation"
+>
+  <div style="display: flex; align-items: center; justify-content: space-between;">
+    <!-- Wordmark -->
+    <a
+      href="/"
+      style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); text-decoration: none;"
+    >
+      AASHNI KHURANA
+    </a>
+
+    <!-- Desktop links -->
+    <ul
+      id="nav-links"
+      style="display: flex; align-items: center; gap: 0; list-style: none; margin: 0; padding: 0;"
+      class="nav-desktop-links"
+    >
+      <li>
+        <a href="/research" style="font-family: Inter, sans-serif; font-size: 14px; color: var(--text); text-decoration: none;" class="hover-underline nav-link">Research</a>
+      </li>
+      <li style="margin: 0 10px; color: var(--text-muted); font-size: 12px;">—</li>
+      <li>
+        <a href="/about" style="font-family: Inter, sans-serif; font-size: 14px; color: var(--text); text-decoration: none;" class="hover-underline nav-link">About</a>
+      </li>
+      <li style="margin: 0 10px; color: var(--text-muted); font-size: 12px;">—</li>
+      <li>
+        <a href="/contact" style="font-family: Inter, sans-serif; font-size: 14px; color: var(--text); text-decoration: none;" class="hover-underline nav-link">Contact</a>
+      </li>
+      <li style="margin: 0 10px; color: var(--text-muted); font-size: 12px;">—</li>
+      <li>
+        <a href="/cv/aashni-khurana-cv.pdf" target="_blank" rel="noopener noreferrer" style="font-family: Inter, sans-serif; font-size: 14px; color: var(--text); text-decoration: none;" class="hover-underline nav-link">CV</a>
+      </li>
+    </ul>
+
+    <!-- Mobile hamburger -->
+    <button
+      id="nav-hamburger"
+      aria-label="Open menu"
+      aria-expanded="false"
+      style="display: none; background: none; border: none; cursor: pointer; padding: 4px; color: var(--text-muted);"
+      class="nav-mobile-btn"
+    >
+      <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile full-screen overlay -->
+<div
+  id="nav-overlay"
+  style="display: none; position: fixed; inset: 0; z-index: 49; background: rgba(14, 14, 16, 0.97); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); flex-direction: column; align-items: center; justify-content: center; gap: 40px;"
+  aria-hidden="true"
+>
+  <button
+    id="nav-close"
+    aria-label="Close menu"
+    style="position: absolute; top: 24px; right: 7vw; background: none; border: none; cursor: pointer; color: var(--text-muted); padding: 8px;"
+  >
+    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+      <path stroke-linecap="round" d="M18 6L6 18M6 6l12 12" />
+    </svg>
+  </button>
+  <nav style="display: flex; flex-direction: column; align-items: center; gap: 32px; list-style: none;" aria-label="Mobile navigation">
+    <a href="/research" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Research</a>
+    <a href="/about" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">About</a>
+    <a href="/contact" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Contact</a>
+    <a href="/cv/aashni-khurana-cv.pdf" target="_blank" rel="noopener noreferrer" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">CV</a>
+  </nav>
+</div>
+
+<style>
+  @media (max-width: 767px) {
+    .nav-desktop-links { display: none !important; }
+    .nav-mobile-btn { display: flex !important; }
+  }
+  @media (min-width: 768px) {
+    .nav-mobile-btn { display: none !important; }
+  }
+
+  .nav-overlay-link {
+    transition: color 400ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .nav-overlay-link:hover {
+    color: var(--accent) !important;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('site-nav')
+  const overlay = document.getElementById('nav-overlay')
+  const hamburger = document.getElementById('nav-hamburger')
+  const closeBtn = document.getElementById('nav-close')
+  const sentinel = document.getElementById('hero-sentinel')
+
+  function showNav() {
+    nav?.classList.add('nav-visible')
+  }
+
+  function hideNav() {
+    nav?.classList.remove('nav-visible')
+  }
+
+  function openOverlay() {
+    if (!overlay) return
+    overlay.style.display = 'flex'
+    overlay.setAttribute('aria-hidden', 'false')
+    hamburger?.setAttribute('aria-expanded', 'true')
+    document.body.style.overflow = 'hidden'
+  }
+
+  function closeOverlay() {
+    if (!overlay) return
+    overlay.style.display = 'none'
+    overlay.setAttribute('aria-hidden', 'true')
+    hamburger?.setAttribute('aria-expanded', 'false')
+    document.body.style.overflow = ''
+  }
+
+  // If there's a hero sentinel, use IntersectionObserver
+  if (sentinel) {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          hideNav()
+        } else {
+          showNav()
+        }
+      },
+      { threshold: 0 }
+    )
+    observer.observe(sentinel)
+  } else {
+    // Non-homepage: nav always visible
+    showNav()
+  }
+
+  hamburger?.addEventListener('click', openOverlay)
+  closeBtn?.addEventListener('click', closeOverlay)
+
+  // Close overlay when clicking a link
+  overlay?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeOverlay)
+  })
+
+  // Close on backdrop click (clicking outside the nav links)
+  overlay?.addEventListener('click', (e) => {
+    if (e.target === overlay) closeOverlay()
+  })
+
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeOverlay()
+  })
+</script>

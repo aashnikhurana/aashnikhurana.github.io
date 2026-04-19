@@ -1,0 +1,69 @@
+---
+import CaseStudy from '@/layouts/CaseStudy.astro'
+---
+
+<CaseStudy
+  title="iPSC-Derived Motor Neurons as a Model for Meditation-Induced Bloodborne Signaling"
+  subtitle="UC San Diego Health · Department of Anesthesiology · 2025–Present"
+  tags={['iPSC', 'Bioanalytical Assay Development', 'Neurotherapeutics']}
+  year="2025 – PRESENT"
+  description="Building a human motor neuron model to decode how meditation-induced bloodborne factors reshape neuronal bioenergetics — the next-generation cellular system for a published research program."
+  prevStudy={{ title: 'Computational Protein Binding of DMTS and DMDS', href: '/case-studies/dmds-computational' }}
+>
+
+  <p>
+    Meditation has long been associated with improvements in physical and mental health, but the biological mechanisms linking contemplative practice to physiological change are only now being systematically mapped. Recent work from the Patel lab at UCSD has shown that intensive meditation induces measurable shifts in the blood environment — coordinated changes in circulating proteins, metabolites, and exosomal RNAs — and that plasma collected from experienced meditators exerts direct effects on cultured cells. Zuniga-Hertz et al. (2023) identified SERPINA5, a serine protease inhibitor elevated in meditator plasma, as one bloodborne factor sufficient to limit SARS-CoV-2 pseudovirus entry into human lung epithelial cells. A follow-up pilot study in monozygotic twins (Zuniga-Hertz et al., 2025) mapped coordinated shifts in gene expression, metabolomic pathways, cytokine profiles, and heart rate dynamics across a 7-day meditation retreat. Most recently, Jinich-Diamant et al. (2025) demonstrated that post-intervention plasma induced longer neurite outgrowth in PC12 cells and shifted BE(2)M17 neuroblastoma cells toward enhanced glycolytic metabolism — direct cellular evidence that meditation-induced plasma carries neurotrophic and bioenergetic signals.
+  </p>
+
+  <p>
+    Together, these findings suggest that meditation induces the release of bioactive compounds and signaling molecules into the bloodstream. The exact biochemical pathways through which these factors influence human neurons, however, remain unclear. Which signaling cascades are engaged? What is the bioenergetic signature of the neuronal response? And do the effects observed in immortalized neuroblastoma lines translate to the cell types most central to neurological function?
+  </p>
+
+  <!-- TODO: iPSC microscopy or albumin structure image -->
+
+  <p>
+    To address these questions, I am building out an iPSC-derived motor neuron platform as the next-generation human neuronal model for this research program. Motor neurons are particularly well-suited to the question: they are among the most electrically active cell types in the human body, and their reliance on high-throughput bioenergetics makes them exceptionally sensitive to shifts in the extracellular environment. I run the full iPSC-to-motor-neuron differentiation protocol — a multi-week process with narrow quality windows — and am developing the bioanalytical pipeline that will characterize how these neurons respond to pre- and post-meditation plasma across orthogonal readouts: NanoSight nanoparticle tracking analysis for exosome and extracellular vesicle characterization, Bradford quantification for protein loading, and ELISA-format immunoassays for target protein abundance.
+  </p>
+
+  <p>
+    The pipeline is being built now, with no experimental data yet. Once validated, it will be ready to support the lab's move from neuroblastoma-based assays toward a patient-derivable neuronal system capable of testing pre/post-meditation plasma at scale. The broader aim is to give the lab a platform that can ask the same questions of any bloodborne intervention — not only meditation — and begin resolving which molecular signals in human blood carry biologically meaningful information to human neurons.
+  </p>
+
+  <!-- Sidebar -->
+  <div slot="sidebar">
+    <div class="sidebar-block">
+      <span class="sidebar-label">Principal Investigator</span>
+      <span class="sidebar-value">Dr. Hemal H. Patel</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Institution</span>
+      <span class="sidebar-value">UC San Diego Health<br />Department of Anesthesiology</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Focus</span>
+      <span class="sidebar-value">Mind-body interventions<br />Meditation-induced plasma signaling<br />Neuronal bioenergetics</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">My methods</span>
+      <span class="sidebar-value">iPSC culture and motor neuron differentiation<br />NanoSight NS300 NTA<br />Bradford assay<br />ELISA-format immunoassay</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Status</span>
+      <span class="sidebar-value" style="color: var(--accent);">Pipeline development phase</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Key publications</span>
+      <span class="sidebar-value">
+        Zuniga-Hertz JP, et al. <em>Brain Behav Immun Health.</em> 2023;32:100675.<br /><br />
+        Zuniga-Hertz JP, et al. <em>Mindfulness.</em> 2025;16:1634–1655.<br /><br />
+        Jinich-Diamant A, et al. <em>Commun Biol.</em> 2025;8:1525.
+      </span>
+    </div>
+  </div>
+
+</CaseStudy>

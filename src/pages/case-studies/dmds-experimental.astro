@@ -1,0 +1,82 @@
+---
+import CaseStudy from '@/layouts/CaseStudy.astro'
+---
+
+<CaseStudy
+  title="DMDS–Albumin Protein Binding"
+  subtitle="Master's thesis · Sam Houston State University · 2023–2025"
+  tags={['Assay Design', 'Bioanalytical Methods', 'ADME/DMPK']}
+  year="2023 – 2025"
+  description="Designed a vapor-phase binding assay for a volatile cyanide-antidote metabolite. Turned DMDS's instability from the thing that breaks the measurement into the thing that makes it work."
+  prevStudy={{ title: 'Analytical Method Development in cGMP Manufacturing', href: '/case-studies/anant' }}
+  nextStudy={{ title: 'Computational Protein Binding of DMTS and DMDS', href: '/case-studies/dmds-computational' }}
+>
+
+  <p>
+    Dimethyl trisulfide (DMTS) is a garlic-derived compound being developed as an intramuscular cyanide antidote — a field-deployable alternative to the IV antidotes emergency medicine currently relies on. In swine studies, about half of DMTS converts to dimethyl disulfide (DMDS) by donating sulfur to cyanide, so understanding how DMDS behaves in blood is essential for predicting the antidote's overall pharmacokinetics. My thesis characterized DMDS's binding to human serum albumin, the primary transport protein.
+  </p>
+
+  <p>
+    The challenge is that DMDS is volatile — it boils at 110 &deg;C and doesn't want to stay in solution long enough for standard protein binding assays to work. Rather than force it into a method it doesn't fit, I designed a two-chamber assay that uses the volatility as the mechanism of equilibration: Vapor Transfer Equilibrium (VTE). One chamber holds the formulated drug, the other holds protein. They share a headspace but no liquid contact. DMDS equilibrates through the vapor phase while non-volatile surfactant and protein stay put.
+  </p>
+
+  <!-- VTE apparatus image -->
+  <!-- TODO: Aashni — confirm 13_vte_setup.jpg matches the two-chamber VTE diagram from the thesis; swap filename if needed -->
+  <div class="cs-image-wrap">
+    <img
+      src="/images/thesis/13_vte_setup.jpg"
+      alt="Two-chamber Vapor Transfer Equilibrium apparatus showing drug chamber and protein chamber sharing a sealed headspace"
+    />
+    <p class="cs-caption">VAPOR TRANSFER EQUILIBRIUM APPARATUS &middot; TWO-CHAMBER DESIGN</p>
+  </div>
+
+  <p>
+    Running VTE alongside Rapid Equilibrium Dialysis (RED), I triangulated DMDS's behavior from two complementary angles. Both pointed to weak binding between DMDS and albumin — but the more interesting finding came from the methodology itself. When VTE results looked flat, I suspected the assay before the biology and traced the signal to surface partitioning, where DMDS was silently adsorbing onto container walls. Statistical analysis quantified losses at 25% over 270 minutes (p &lt; 0.001); acetonitrile extraction recovered ~85% of the "lost" material. A parallel laser light scattering study found the formulation itself was destabilizing, with systematic scattering decline over seven days suggesting micellar restructuring.
+  </p>
+
+  <!-- Laser scattering image -->
+  <!-- TODO: Aashni — confirm 10_laser_setup.jpg matches the green laser scattering setup from the thesis -->
+  <div class="cs-image-wrap">
+    <img
+      src="/images/thesis/10_laser_setup.jpg"
+      alt="Laser light scattering setup used to assess DMDS emulsion stability, showing green laser passing through solution in cuvette"
+    />
+    <p class="cs-caption">LASER SCATTERING SETUP &middot; DMDS SOLUTION STABILITY MEASUREMENT</p>
+  </div>
+
+  <p>
+    The work produced a validated HPLC method for DMDS quantification (25–700 &mu;g/mL, R&sup2; = 0.9974), a diagnostic framework for recognizing surface partitioning and emulsion artifacts in volatile-analyte assays, and VTE itself as a transferable method for any future volatile drug candidate. The co-first-author poster on this work received First Prize at the 127th Texas Academy of Science Annual Meeting, and the broader DMTS program now builds on these methods.
+  </p>
+
+  <!-- Sidebar -->
+  <div slot="sidebar">
+    <div class="sidebar-block">
+      <span class="sidebar-label">Thesis</span>
+      <span class="sidebar-value"><em>Protein Binding Studies of Dimethyl Disulfide with Albumin</em></span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Committee</span>
+      <span class="sidebar-value">Dr. David E. Thompson (Chair)<br />Dr. Ilona Petrikovics<br />Dr. Donovan C. Haines</span>
+    </div>
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Funding</span>
+      <span class="sidebar-value">Robert A. Welch Foundation<br />COSET Graduate Scholarship</span>
+    </div>
+
+    <!-- TODO: Aashni — add thesis PDF link when public -->
+
+    <div class="sidebar-block">
+      <span class="sidebar-label">Presentations</span>
+      <span class="sidebar-value">
+        ACS National Meeting<br />Washington DC &mdash; Aug 2025<br /><br />
+        ACS National Meeting<br />Denver CO &mdash; Aug 2024<br /><br />
+        ACS Southwest Regional Meeting<br />Waco TX &mdash; Oct 2024<br /><br />
+        Texas Academy of Science, 127th Annual Meeting<br />Odessa TX &mdash; Mar 2024<br />
+        <strong style="color: var(--accent);">First Prize</strong> (co-first author)
+      </span>
+    </div>
+  </div>
+
+</CaseStudy>
