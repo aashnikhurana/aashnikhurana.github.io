@@ -11,42 +11,42 @@ import headshot from '../headshot.jpg'
   <!-- ── HERO ── -->
   <section
     id="hero"
-    style="width: 85%; max-width: 1300px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
+    style="width: 70%; max-width: 1080px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
   >
 
 
     <!-- 60/40 split: text left, image right -->
-    <div class="hero-inner" style="display: grid; grid-template-columns: 60fr 40fr; gap: 0; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto;">
+    <div class="hero-inner" style="display: grid; grid-template-columns: 75fr 25fr; gap: 0; align-items: center; width: 100%; max-width: 1080px; margin: 0 auto;">
 
       <!-- Left: headline + subtitle + CTA -->
       <div style="padding-right: 4vw;">
         <h1 class="hero-headline" style="margin: 0; padding: 0;">
           <span
             class="animate-fade-rise"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
           >
             I turn
           </span>
           <span
             class="animate-fade-rise-d200"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
           >
             <span class="glow-word molecule-word">molecules</span>
           </span>
           <span
             class="animate-fade-rise-d400"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
           >
             into&nbsp;<span
               class="glow-word data-word"
-              style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: var(--accent); font-size: 1.1em;"
+              style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: var(--accent);"
             >data.</span>
           </span>
         </h1>
 
         <div
           class="animate-fade-rise-d600"
-          style="font-family: Inter, sans-serif; font-weight: 400; font-size: 20px; color: var(--text-muted); line-height: 1.6; margin-top: 24px; margin-bottom: 0;"
+          style="font-family: Inter, sans-serif; font-weight: 400; font-size: 18px; color: var(--text-muted); line-height: 1.6; margin-top: 24px; margin-bottom: 0;"
         >
           <div style="white-space: nowrap;">Bioanalytical chemistry &middot; Method development &middot; Drug discovery</div>
           <div style="margin-top: 12px; letter-spacing: 0.02em;">
@@ -59,7 +59,7 @@ import headshot from '../headshot.jpg'
 
       <!-- Right: rotating albumin image -->
       <div class="hero-image-col" style="position: relative; display: flex; align-items: center; justify-content: center;">
-        <div style="position: relative; width: 50vw; max-width: 680px;">
+        <div style="position: relative; width: 40vw; max-width: 520px;">
           <!-- 3D Interactive Model -->
           <div
             style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); filter: brightness(0.85) saturate(1.1); cursor: grab;"
@@ -99,27 +99,26 @@ import headshot from '../headshot.jpg'
     </div>
 
     <!-- Scroll cue — outer div handles centering, inner handles bob animation -->
-    <a
-      href="#research"
-      style="position: absolute; bottom: 10vh; left: 50%; transform: translateX(-50%); cursor: pointer; text-decoration: none;"
-      aria-label="Scroll to Research"
+    <div
+      style="position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); pointer-events: none;"
+      aria-hidden="true"
     >
       <div
         class="scroll-bob"
-        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)); transition: filter 400ms var(--easing);"
+        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 8px rgba(237, 234, 227, 0.4));"
       >
-        <svg width="18" height="10" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 2L10 10L18 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2L10 10L18 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-    </a>
+    </div>
 
 
   </section>
 
 
   <!-- ── RESEARCH ── -->
-  <section id="research" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 20px 0 80px; scroll-margin-top: 70px;">
+  <section id="research" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 120px 0 80px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
       Research
     </h1>
