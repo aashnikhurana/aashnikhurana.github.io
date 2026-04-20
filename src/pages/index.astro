@@ -604,7 +604,7 @@ import headshot from '../headshot.jpg'
             <div style="border-left: 3px solid var(--accent); padding-left: 24px; position: relative;">
               <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0 0 8px;">
                 <a href={pub.url} class="pub-link group" target="_blank" rel="noopener noreferrer">
-                  {pub.authors} <span style="font-style: italic;">{pub.title}.</span> {pub.venue}.
+                  <span set:html={pub.authors.replace('Khurana, A.', '<strong>Khurana, A.</strong>')} /> <span style="font-style: italic;">{pub.title}.</span> {pub.venue}.
                   <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
                 </a>
               </p>
@@ -631,7 +631,7 @@ import headshot from '../headshot.jpg'
         <div style="border-left: 3px solid var(--accent); padding-left: 24px; position: relative;">
           <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0;">
             <a href="/docs/thesis.pdf" class="pub-link group" target="_blank" rel="noopener noreferrer">
-              Khurana, A. (May '25). <span style="font-style: italic;">Protein Binding Studies of Dimethyl Disulfide with Albumin.</span> Master of Science Thesis, Sam Houston State University. Committee: Dr. David E. Thompson (Chair), Dr. Ilona Petrikovics, Dr. Donovan C. Haines.
+              <strong>Khurana, A.</strong> (May '25). <span style="font-style: italic;">Protein Binding Studies of Dimethyl Disulfide with Albumin.</span> Master of Science Thesis, Sam Houston State University. Committee: Dr. David E. Thompson (Chair), Dr. Ilona Petrikovics, Dr. Donovan C. Haines.
               <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
             </a>
           </p>
@@ -668,7 +668,7 @@ import headshot from '../headshot.jpg'
             rel="noopener noreferrer"
             class="touch-button"
           >
-            Download CV <span class="cv-arrow" style="font-size: 18px; margin-left: 6px; transition: transform 400ms var(--easing);">↗</span>
+            Download CV <span class="cv-arrow">↗</span>
           </a>
 
           <a
@@ -742,6 +742,17 @@ import headshot from '../headshot.jpg'
     color: var(--accent); /* Text turns pink */
     box-shadow: 0 0 25px rgba(155, 58, 74, 0.25);
   }
+
+  .touch-button .cv-arrow {
+    font-size: 0.9em;
+    margin-left: 0.35rem;
+    line-height: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 400ms var(--easing), opacity 400ms var(--easing);
+  }
+
   .touch-button:hover .cv-arrow {
     opacity: 1;
   }
