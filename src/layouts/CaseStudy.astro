@@ -31,10 +31,10 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     <nav aria-label="Breadcrumb" style="margin-bottom: 48px;">
       <a
         href="/#research"
-        style="font-family: 'JetBrains Mono', monospace; font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 300ms cubic-bezier(0.2, 0, 0, 1);"
+        style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 300ms cubic-bezier(0.2, 0, 0, 1);"
         class="breadcrumb-link"
       >
-        &larr; Research
+        <span style="font-size: 1.3em; vertical-align: baseline; margin-right: 4px;">&larr;</span> Research
       </a>
     </nav>
 
@@ -46,7 +46,7 @@ const metaDescription = description ?? `${title} — ${subtitle}`
       <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin: 0 0 20px; line-height: 1.5;">
         {subtitle}
       </p>
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
         {tags.join(' \u00B7 ')}
       </div>
     </header>
@@ -62,7 +62,7 @@ const metaDescription = description ?? `${title} — ${subtitle}`
       </div>
 
       <!-- Sidebar -->
-      <aside class="cs-sidebar" style="position: sticky; top: 120px;">
+      <aside class="cs-sidebar">
         <slot name="sidebar" />
       </aside>
 
@@ -81,9 +81,9 @@ const metaDescription = description ?? `${title} — ${subtitle}`
               <a
                 href={prevStudy.href}
                 class="pagination-link"
-                style="font-family: Inter, sans-serif; font-style: italic; font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);"
+                style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);"
               >
-                &larr; {prevStudy.title}
+                <span style="font-size: 1.3em; vertical-align: baseline; margin-right: 4px;">&larr;</span> {prevStudy.title}
               </a>
             )}
           </div>
@@ -92,9 +92,9 @@ const metaDescription = description ?? `${title} — ${subtitle}`
               <a
                 href={nextStudy.href}
                 class="pagination-link"
-                style="font-family: Inter, sans-serif; font-style: italic; font-size: 14px; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1); text-align: right;"
+                style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1); text-align: right;"
               >
-                {nextStudy.title} &rarr;
+                {nextStudy.title} <span style="font-size: 1.3em; vertical-align: baseline; margin-left: 4px;">&rarr;</span>
               </a>
             )}
           </div>
@@ -113,6 +113,20 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     line-height: 1.75;
     color: var(--text);
     margin-bottom: 32px;
+  }
+
+  .cs-prose :global(a) {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--rule);
+    transition: all 300ms var(--easing);
+  }
+
+  .cs-prose :global(a:hover) {
+    color: var(--accent);
+    text-decoration-color: var(--accent);
   }
 
   .cs-prose :global(h2) {
@@ -140,6 +154,24 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     margin: 40px 0 48px;
   }
 
+  .cs-prose :global(.cs-image-grid) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin: 40px 0 48px;
+  }
+
+  .cs-prose :global(.cs-image-grid .cs-image-wrap) {
+    margin: 0;
+  }
+
+  @media (max-width: 768px) {
+    .cs-prose :global(.cs-image-grid) {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+  }
+
   .cs-prose :global(.cs-image-wrap img) {
     width: 100%;
     height: auto;
@@ -149,33 +181,79 @@ const metaDescription = description ?? `${title} — ${subtitle}`
 
   .cs-prose :global(.cs-caption) {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
+    font-size: 12px;
+    font-weight: 600;
     letter-spacing: 0.1em;
     color: var(--text-muted);
-    margin-top: 12px;
-    line-height: 1.5;
+    margin: 16px 0 0;
+    text-transform: uppercase;
+    text-align: center;
   }
 
   /* Sidebar typography */
   .cs-sidebar :global(.sidebar-block) {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
+  }
+
+  .cs-sidebar :global(.sidebar-logo) {
+    width: 200px;
+    height: auto;
+    display: block;
+    opacity: 0.6;
+    margin-bottom: 12px;
+  }
+
+  .cs-sidebar :global(.sidebar-logo.ucsd-health) {
+    aspect-ratio: 4 / 1;
+    object-fit: cover;
+    object-position: 25% center; /* Shift slightly right to crop left space */
+    transform: scale(1.1); /* Zoom in a bit more */
   }
 
   .cs-sidebar :global(.sidebar-label) {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 10px;
+    font-size: 14px;
+    font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     color: var(--text);
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     display: block;
   }
 
   .cs-sidebar :global(.sidebar-value) {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    line-height: 1.8;
+    font-size: 15px;
+    line-height: 1.5;
     color: var(--text-muted);
+    display: block;
+  }
+
+  .cs-sidebar :global(.sidebar-item) {
+    display: block;
+    margin-bottom: 12px;
+  }
+
+  .cs-sidebar :global(.sidebar-item:last-child) {
+    margin-bottom: 0;
+  }
+
+  .cs-sidebar :global(.sidebar-link) {
+    color: inherit;
+    text-decoration: none;
+    transition: color 300ms cubic-bezier(0.2, 0, 0, 1);
+  }
+
+  .cs-sidebar :global(.sidebar-link:hover) {
+    color: var(--accent) !important;
+  }
+
+  .cs-sidebar :global(.sidebar-link-icon) {
+    font-size: 1.2em;
+    margin-left: 4px;
+    vertical-align: baseline;
+    line-height: 0;
+    display: inline-block;
   }
 
   /* Hover states */

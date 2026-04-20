@@ -113,25 +113,14 @@
   transform: translateY(0);
 }
 
-/* ── Hover underline, left-to-right ── */
+/* ── Hover accent color ── */
 .hover-underline {
-  position: relative;
+  transition: color 300ms var(--easing);
   text-decoration: none;
 }
 
-.hover-underline::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: currentColor;
-  transition: width 300ms cubic-bezier(0.2, 0, 0, 1);
-}
-
-.hover-underline:hover::after {
-  width: 100%;
+.hover-underline:hover {
+  color: var(--accent) !important;
 }
 
 /* ── Arrow nudge on hover ── */

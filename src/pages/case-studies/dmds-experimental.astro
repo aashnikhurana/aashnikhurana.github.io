@@ -13,69 +13,194 @@ import CaseStudy from '@/layouts/CaseStudy.astro'
 >
 
   <p>
-    Dimethyl trisulfide (DMTS) is a garlic-derived compound being developed as an intramuscular cyanide antidote — a field-deployable alternative to the IV antidotes emergency medicine currently relies on. In swine studies, about half of DMTS converts to dimethyl disulfide (DMDS) by donating sulfur to cyanide, so understanding how DMDS behaves in blood is essential for predicting the antidote's overall pharmacokinetics. My thesis characterized DMDS's binding to human serum albumin, the primary transport protein.
+    Dimethyl trisulfide (DMTS) is a garlic-derived compound being developed as an intramuscular cyanide antidote, a field-deployable alternative to the IV antidotes emergency medicine currently relies on. In the swine studies from Bebarta et al., roughly half of the administered DMTS is converted in blood to dimethyl disulfide (DMDS) by donating sulfur to cyanide, so understanding how DMDS behaves in plasma is essential for predicting the antidote's overall pharmacokinetics. My thesis, supervised by Dr. David E. Thompson and Dr. Ilona Petrikovics, characterized DMDS's binding to human serum albumin, the primary transport protein in blood and the one that governs whether a drug is free and active or sequestered and silent.
   </p>
 
   <p>
-    The challenge is that DMDS is volatile — it boils at 110 &deg;C and doesn't want to stay in solution long enough for standard protein binding assays to work. Rather than force it into a method it doesn't fit, I designed a two-chamber assay that uses the volatility as the mechanism of equilibration: Vapor Transfer Equilibrium (VTE). One chamber holds the formulated drug, the other holds protein. They share a headspace but no liquid contact. DMDS equilibrates through the vapor phase while non-volatile surfactant and protein stay put.
+    The Rapid Equilibrium Dialysis (RED) plates had their own failure mode. The adhesive seals began debonding after about six hours at 37 &deg;C, exactly the incubation window the experiments required, which was catastrophic for a volatile analyte.
   </p>
 
-  <!-- VTE apparatus image -->
-  <!-- TODO: Aashni — confirm 13_vte_setup.jpg matches the two-chamber VTE diagram from the thesis; swap filename if needed -->
+  <div class="cs-image-wrap">
+    <img
+      src="/images/thesis/14_red_configuration.jpg"
+      alt="RED configuration showing the Rapid Equilibrium Dialysis setup"
+    />
+    <p class="cs-caption">RAPID EQUILIBRIUM DIALYSIS CONFIGURATION</p>
+  </div>
+
+  <p>
+    The experimental challenge is that DMDS is volatile. It boils at 110 &deg;C and doesn't want to stay in solution long enough for standard protein binding assays to work. Rather than force it into a method it doesn't fit, I helped refine a two-chamber assay that uses the volatility itself as the mechanism of equilibration: Vapor Transfer Equilibrium (VTE). One chamber holds the formulated drug, the other holds protein. They share a headspace but no liquid contact. DMDS equilibrates through the vapor phase while the non-volatile surfactant and protein stay put, turning the drug's instability from the thing that breaks the measurement into the thing that makes it work.
+  </p>
+
   <div class="cs-image-wrap">
     <img
       src="/images/thesis/13_vte_setup.jpg"
       alt="Two-chamber Vapor Transfer Equilibrium apparatus showing drug chamber and protein chamber sharing a sealed headspace"
     />
-    <p class="cs-caption">VAPOR TRANSFER EQUILIBRIUM APPARATUS &middot; TWO-CHAMBER DESIGN</p>
+    <p class="cs-caption">VAPOR TRANSFER EQUILIBRIUM APPARATUS</p>
   </div>
 
   <p>
-    Running VTE alongside Rapid Equilibrium Dialysis (RED), I triangulated DMDS's behavior from two complementary angles. Both pointed to weak binding between DMDS and albumin — but the more interesting finding came from the methodology itself. When VTE results looked flat, I suspected the assay before the biology and traced the signal to surface partitioning, where DMDS was silently adsorbing onto container walls. Statistical analysis quantified losses at 25% over 270 minutes (p &lt; 0.001); acetonitrile extraction recovered ~85% of the "lost" material. A parallel laser light scattering study found the formulation itself was destabilizing, with systematic scattering decline over seven days suggesting micellar restructuring.
+    Running VTE alongside RED, I triangulated DMDS's behavior from two complementary angles. Both pointed to weak binding between DMDS and albumin. The more interesting finding came from the methodology itself. When VTE results looked flat, I suspected the assay before the biology and traced the lost signal to surface partitioning: DMDS was silently adsorbing onto the walls of the polypropylene container. Statistical analysis quantified losses at 25% over 270 minutes (p &lt; 0.001); an acetonitrile wash of the emptied containers recovered about 6% of the lost material, showing that most of it was going somewhere else, likely headspace volatilization or more complex surface effects.
   </p>
 
-  <!-- Laser scattering image -->
-  <!-- TODO: Aashni — confirm 10_laser_setup.jpg matches the green laser scattering setup from the thesis -->
+  <p>
+    A parallel laser light scattering study found that the formulation itself was destabilizing, with systematic scattering decline over seven days suggesting micellar restructuring.
+  </p>
+
   <div class="cs-image-wrap">
     <img
       src="/images/thesis/10_laser_setup.jpg"
       alt="Laser light scattering setup used to assess DMDS emulsion stability, showing green laser passing through solution in cuvette"
     />
-    <p class="cs-caption">LASER SCATTERING SETUP &middot; DMDS SOLUTION STABILITY MEASUREMENT</p>
+    <p class="cs-caption">LASER SCATTERING SETUP<br />DMDS SOLUTION STABILITY MEASUREMENT</p>
   </div>
 
   <p>
-    The work produced a validated HPLC method for DMDS quantification (25–700 &mu;g/mL, R&sup2; = 0.9974), a diagnostic framework for recognizing surface partitioning and emulsion artifacts in volatile-analyte assays, and VTE itself as a transferable method for any future volatile drug candidate. The co-first-author poster on this work received First Prize at the 127th Texas Academy of Science Annual Meeting, and the broader DMTS program now builds on these methods.
+    The work produced a validated High-Performance Liquid Chromatography (HPLC) method for DMDS quantification, a diagnostic framework for recognizing surface partitioning and emulsion artifacts in volatile-analyte assays, and VTE itself as a transferable method for any future volatile drug candidate. These methods now feed into the CounterACT-funded DMTS program at SHSU and its collaborating institutions.
   </p>
 
   <!-- Sidebar -->
   <div slot="sidebar">
     <div class="sidebar-block">
-      <span class="sidebar-label">Thesis</span>
-      <span class="sidebar-value"><em>Protein Binding Studies of Dimethyl Disulfide with Albumin</em></span>
+      <img 
+        src="/images/logos/shsu_logo.png" 
+        alt="SHSU Logo" 
+        class="sidebar-logo"
+      />
     </div>
 
     <div class="sidebar-block">
-      <span class="sidebar-label">Committee</span>
-      <span class="sidebar-value">Dr. David E. Thompson (Chair)<br />Dr. Ilona Petrikovics<br />Dr. Donovan C. Haines</span>
+      <div class="sidebar-label">Institution</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">
+          <a href="https://www.shsu.edu/academics/colleges/science-engineering-technology/chemistry/" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Department of Chemistry, Sam Houston State University<span class="sidebar-link-icon">↗</span>
+          </a>
+        </div>
+      </div>
     </div>
 
     <div class="sidebar-block">
-      <span class="sidebar-label">Funding</span>
-      <span class="sidebar-value">Robert A. Welch Foundation<br />COSET Graduate Scholarship</span>
+      <div class="sidebar-label">Role</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">Lab Manager & Research Assistant</div>
+      </div>
     </div>
 
-    <!-- TODO: Aashni — add thesis PDF link when public -->
+    <div class="sidebar-block">
+      <div class="sidebar-label">Duration</div>
+      <div class="sidebar-value">Aug 2023 – Aug 2025</div>
+    </div>
 
     <div class="sidebar-block">
-      <span class="sidebar-label">Presentations</span>
-      <span class="sidebar-value">
-        ACS National Meeting<br />Washington DC &mdash; Aug 2025<br /><br />
-        ACS National Meeting<br />Denver CO &mdash; Aug 2024<br /><br />
-        ACS Southwest Regional Meeting<br />Waco TX &mdash; Oct 2024<br /><br />
-        Texas Academy of Science, 127th Annual Meeting<br />Odessa TX &mdash; Mar 2024<br />
-        <strong style="color: var(--accent);">First Prize</strong> (co-first author)
-      </span>
+      <div class="sidebar-label">Thesis</div>
+      <div class="sidebar-value">
+        <a href="/docs/thesis.pdf" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+          Protein Binding Studies of Dimethyl Disulfide with Albumin<span class="sidebar-link-icon">&nearr;</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Committee</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">
+          <a href="https://www.shsu.edu/directory/employee-profiles/thompson-david-det002" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Dr. David E. Thompson<span class="sidebar-link-icon">&nearr;</span>
+          </a> (Chair)
+        </div>
+        <div class="sidebar-item">
+          <a href="https://www.shsu.edu/directory/employee-profiles/petrikovics-ilona-ixp004#Exhibits%20and%20Performances" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Dr. Ilona Petrikovics<span class="sidebar-link-icon">&nearr;</span>
+          </a> (Chair)
+        </div>
+        <div class="sidebar-item">
+          <a href="https://www.shsu.edu/directory/employee-profiles/haines-donovan-dch009" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Dr. Donovan C. Haines<span class="sidebar-link-icon">&nearr;</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Funding</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">
+          <a href="https://www.ninds.nih.gov/current-research/trans-agency-activities/counteract-program" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            U.S. Department of Defense (CounterACT Program)<span class="sidebar-link-icon">↗</span>
+          </a>
+        </div>
+        <div class="sidebar-item">
+          <a href="https://welch1.org/" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Robert A. Welch Foundation<span class="sidebar-link-icon">↗</span>
+          </a>
+        </div>
+        <div class="sidebar-item">
+          <a href="https://www.shsu.edu/academics/colleges/science-engineering-technology/" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            COSET Graduate Scholarship<span class="sidebar-link-icon">↗</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Techniques</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">Vapor Transfer Equilibrium (VTE)</div>
+        <div class="sidebar-item">Rapid Equilibrium Dialysis (RED)</div>
+        <div class="sidebar-item">HPLC-UV/Vis</div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Presentations</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">
+          <a href="https://www.researchgate.net/publication/403971087_Spectroscopic_Characterization_of_DMTS-Serum_Albumin_Binding" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            ACS National Meeting<span class="sidebar-link-icon">↗</span>
+          </a>
+          <br />
+          Washington DC &mdash; Aug 2025
+        </div>
+
+        <div class="sidebar-item">
+          <a href="https://www.researchgate.net/publication/403957031_Disambiguating_the_Binding_Equilibria_of_Volatile_and_Nonvolatile_Compounds_to_Protein" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            ACS National Meeting<span class="sidebar-link-icon">↗</span>
+          </a>
+          <br />
+          Denver CO &mdash; Aug 2024
+        </div>
+
+        <div class="sidebar-item">
+          <a href="https://www.researchgate.net/publication/403956792_In_vitro_Investigation_of_Dimethyl_Disulfide_a_Metabolite_of_the_Cyanide_Antidote_Candidate_Dimethyl_Trisulfide" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            ACS Southwest Regional Meeting<span class="sidebar-link-icon">↗</span>
+          </a>
+          <br />
+          Waco TX &mdash; Oct 2024
+        </div>
+
+        <div class="sidebar-item">
+          <a href="https://www.researchgate.net/publication/403960018_Protein_Binding_Studies_for_the_Cyanide_Antidote_Candidate_Dimethyl_Trisulfide" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Texas Academy of Science, 127th Annual Meeting<span class="sidebar-link-icon">↗</span>
+          </a>
+          <br />
+          Odessa TX &mdash; Mar 2024
+          <br />
+          <span style="color: var(--accent); text-shadow: 0 0 12px var(--accent); font-weight: 600;">First Prize</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="sidebar-block">
+      <div class="sidebar-label">Key publications</div>
+      <div class="sidebar-value">
+        <div class="sidebar-item">
+          <a href="https://www.sciencedirect.com/science/article/abs/pii/S0021967320311304?via%3Dihub" target="_blank" rel="noopener noreferrer" class="sidebar-link">
+            Bebarta VS, et al. <em>J. Chromatogr. A.</em> 2021;1638:461856.<span class="sidebar-link-icon">↗</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 
