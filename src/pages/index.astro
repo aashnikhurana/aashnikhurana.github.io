@@ -11,7 +11,7 @@ import headshot from '../headshot.jpg'
   <!-- ── HERO ── -->
   <section
     id="hero"
-    style="width: 70%; max-width: 1200px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
+    style="width: 70%; max-width: 1080px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
   >
 
 
@@ -388,11 +388,10 @@ import headshot from '../headshot.jpg'
       }
     });
 
-    // Typewriter Logic
+    // Typewriter Logic: Just the dots
     const typeTarget = document.getElementById('typewriter-text');
-    const accentTarget = document.getElementById('typewriter-accent');
     const cursor = document.querySelector('.typewriter-cursor');
-    const textToType = "Soon!";
+    const textToType = "...";
     let charIndex = 0;
     let isTyping = false;
 
@@ -400,26 +399,18 @@ import headshot from '../headshot.jpg'
       if (charIndex < textToType.length) {
         isTyping = true;
         cursor.classList.add('typing');
-        
-        const char = textToType.charAt(charIndex);
-        if (char === '!') {
-          accentTarget.textContent = char;
-        } else {
-          typeTarget.textContent += char;
-        }
-        
+        typeTarget.textContent += textToType.charAt(charIndex);
         charIndex++;
-        setTimeout(typeChar, 150 + Math.random() * 100);
+        setTimeout(typeChar, 400); // Slower, intentional dot typing
       } else {
         isTyping = false;
         cursor.classList.remove('typing');
-        setTimeout(resetTypewriter, 3000);
+        setTimeout(resetTypewriter, 2000);
       }
     }
 
     function resetTypewriter() {
       typeTarget.textContent = '';
-      accentTarget.textContent = '';
       charIndex = 0;
       setTimeout(typeChar, 500);
     }
@@ -482,8 +473,8 @@ import headshot from '../headshot.jpg'
 
     <div class="training-grid" style="display: grid; grid-template-columns: 1fr; gap: 24px;">
       <div class="typewriter-container" style="display: flex; align-items: center; justify-content: center; height: 180px; background: rgba(255, 255, 255, 0.03); border: 1.5px solid var(--accent); border-radius: 16px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 15px rgba(155, 58, 74, 0.15);">
-        <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 36px); font-weight: 600; color: var(--text); margin: 0; letter-spacing: 0.02em;">
-          Coming <span id="typewriter-text"></span><span id="typewriter-accent" style="color: var(--accent); font-weight: 600;"></span><span class="typewriter-cursor"></span>
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 36px); font-weight: 600; color: var(--text); margin: 0; letter-spacing: 0.02em; position: relative; display: inline-block;">
+          Coming Soon<span style="position: absolute; left: 100%; white-space: nowrap;"><span id="typewriter-text" style="color: var(--accent);"></span><span class="typewriter-cursor" style="background-color: var(--accent); margin-left: 2px;"></span></span>
         </p>
       </div>
     </div>
@@ -872,14 +863,66 @@ import headshot from '../headshot.jpg'
   @media (max-width: 767px) {
     .hero-inner {
       grid-template-columns: 1fr !important;
-      gap: 48px !important;
+      gap: 32px !important;
+      text-align: center;
+      padding-top: 40px;
     }
-    .hero-image-col { order: -1; }
-    .hero-image-col > div { width: 60vw !important; max-width: 60vw !important; }
-    .case-card { grid-template-columns: 1fr !important; gap: 16px 0 !important; }
-    .case-card > div:last-child { justify-content: flex-start !important; }
-    .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .hero-headline span {
+      font-size: clamp(40px, 12vw, 64px) !important;
+    }
+    .hero-inner div:first-child {
+      padding-right: 0 !important;
+    }
+    .hero-image-col { 
+      order: -1; 
+      margin-bottom: 24px;
+    }
+    .hero-image-col > div { 
+      width: 80vw !important; 
+      max-width: 80vw !important; 
+    }
+    
+    section {
+      width: 86% !important;
+      padding: 40px 0 !important;
+    }
+
+    .case-card { 
+      grid-template-columns: 1fr !important; 
+      gap: 12px 0 !important; 
+      padding: 32px 0 !important;
+    }
+    .case-card span:first-child {
+      padding-top: 0 !important;
+      font-size: 11px !important;
+    }
+    .case-card > div:last-child { 
+      display: none !important; /* Hide 'Read ->' on mobile list view for cleaner look */
+    }
+    
+    .about-grid { 
+      grid-template-columns: 1fr !important; 
+      gap: 40px !important; 
+      margin-bottom: 32px !important;
+    }
+    .about-grid > div:last-child {
+      order: -1;
+      width: 100% !important;
+      max-width: 300px !important;
+      margin: 0 auto;
+    }
+
     .training-grid { grid-template-columns: 1fr !important; }
-    .modal-content { padding: 40px 24px; }
+    .modal-content { 
+      padding: 48px 24px 32px !important; 
+      border-radius: 20px !important;
+    }
+    .close-modal {
+      top: 16px !important;
+      right: 16px !important;
+      padding: 12px !important;
+      min-width: 44px;
+      min-height: 44px;
+    }
   }
 </style>
