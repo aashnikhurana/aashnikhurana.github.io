@@ -11,42 +11,42 @@ import headshot from '../headshot.jpg'
   <!-- ── HERO ── -->
   <section
     id="hero"
-    style="width: 70%; max-width: 1080px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
+    style="width: 70%; max-width: 1200px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
   >
 
 
     <!-- 60/40 split: text left, image right -->
-    <div class="hero-inner" style="display: grid; grid-template-columns: 75fr 25fr; gap: 0; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto;">
+    <div class="hero-inner" style="display: grid; grid-template-columns: 60fr 40fr; gap: 0; align-items: center; width: 100%; max-width: 1400px; margin: 0 auto;">
 
       <!-- Left: headline + subtitle + CTA -->
       <div style="padding-right: 4vw;">
         <h1 class="hero-headline" style="margin: 0; padding: 0;">
           <span
             class="animate-fade-rise"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
           >
             I turn
           </span>
           <span
             class="animate-fade-rise-d200"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
           >
             <span class="glow-word molecule-word">molecules</span>
           </span>
           <span
             class="animate-fade-rise-d400"
-            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(48px, 6vw, 96px); color: var(--text); line-height: 1.05;"
+            style="display: block; font-family: Inter, sans-serif; font-weight: 700; font-size: clamp(54px, 7vw, 110px); color: var(--text); line-height: 1.05;"
           >
             into&nbsp;<span
               class="glow-word data-word"
-              style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: var(--accent);"
+              style="font-family: 'Cormorant Garamond', Georgia, serif; font-style: italic; color: var(--accent); font-size: 1.1em;"
             >data.</span>
           </span>
         </h1>
 
         <div
           class="animate-fade-rise-d600"
-          style="font-family: Inter, sans-serif; font-weight: 400; font-size: 18px; color: var(--text-muted); line-height: 1.6; margin-top: 24px; margin-bottom: 0;"
+          style="font-family: Inter, sans-serif; font-weight: 400; font-size: 20px; color: var(--text-muted); line-height: 1.6; margin-top: 24px; margin-bottom: 0;"
         >
           <div style="white-space: nowrap;">Bioanalytical chemistry &middot; Method development &middot; Drug discovery</div>
           <div style="margin-top: 12px; letter-spacing: 0.02em;">
@@ -59,7 +59,7 @@ import headshot from '../headshot.jpg'
 
       <!-- Right: rotating albumin image -->
       <div class="hero-image-col" style="position: relative; display: flex; align-items: center; justify-content: center;">
-        <div style="position: relative; width: 40vw; max-width: 520px;">
+        <div style="position: relative; width: 50vw; max-width: 680px;">
           <!-- 3D Interactive Model -->
           <div
             style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); filter: brightness(0.85) saturate(1.1); cursor: grab;"
@@ -99,118 +99,131 @@ import headshot from '../headshot.jpg'
     </div>
 
     <!-- Scroll cue — outer div handles centering, inner handles bob animation -->
-    <div
-      style="position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); pointer-events: none;"
-      aria-hidden="true"
+    <a
+      href="#research"
+      style="position: absolute; bottom: 10vh; left: 50%; transform: translateX(-50%); cursor: pointer; text-decoration: none;"
+      aria-label="Scroll to Research"
     >
       <div
         class="scroll-bob"
-        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 8px rgba(237, 234, 227, 0.4));"
+        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.6)); transition: filter 400ms var(--easing);"
       >
-        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M2 2L10 10L18 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <svg width="18" height="10" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M2 2L10 10L18 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-    </div>
+    </a>
 
 
   </section>
 
 
   <!-- ── RESEARCH ── -->
-  <section id="research" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 120px 0 80px;">
-    <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
+  <section id="research" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 20px 0 80px; scroll-margin-top: 70px;">
+    <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
       Research
     </h1>
-    <p style="font-family: Inter, sans-serif; font-size: 18px; color: var(--text-muted); line-height: 1.7; max-width: 60ch; margin: 0 0 64px;">
-      Four projects over four years &mdash; from cGMP analytical manufacturing to academic wet-lab research, computational binding studies, and emerging human neural models.
+    <p
+      style="font-family: Inter, sans-serif; font-size: 18px; color: var(--text-muted); line-height: 1.7; margin: 0 0 64px;"
+    >
+      Four projects over four years. A trajectory from cGMP analytical QC, through academic wet-lab and computational binding studies, to emerging human neuronal models. The unifying thread is method development: building, validating, and documenting the assays that let a team ask sharper questions.
     </p>
+
+
 
     <!-- Case Study Cards -->
     <div class="case-studies-list">
-      <!-- Card 1: Anant -->
-      <a href="/case-studies/anant" class="case-card" style="display: grid; grid-template-columns: 120px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1);">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px;">
-          2022 &mdash; 2023
+      <!-- Card 1: iPSC (UCSD) -->
+      <a href="/case-studies/ipsc-meditation" class="case-card" style="display: grid; grid-template-columns: 180px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1);">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px; white-space: nowrap;">
+          Aug '25 &mdash; Present
         </span>
         <div>
-          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; max-width: 560px; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Analytical Method Development in cGMP Manufacturing
-          </h2>
-          <p style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; max-width: 560px; margin: 0 0 20px;">
-            Ran analytical QC and method validation on 50+ batches per week across eight drug substance programs — including two HPLC methods validated to ICH Q2(R1) and two FDA audit-readiness reviews with zero critical findings.
-          </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            cGMP &middot; HPLC / GC-FID &middot; Method Validation &middot; FDA Audit Readiness
-          </div>
-        </div>
-        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
-          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Read <span class="arrow">&rarr;</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 2: DMDS Experimental -->
-      <a href="/case-studies/dmds-experimental" class="case-card" style="display: grid; grid-template-columns: 120px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px;">
-          2023 &mdash; 2025
-        </span>
-        <div>
-          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; max-width: 560px; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            DMDS&ndash;Albumin Protein Binding
-          </h2>
-          <p style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; max-width: 560px; margin: 0 0 20px;">
-            Designed a vapor-phase binding assay for a volatile cyanide-antidote metabolite. Turned DMDS&rsquo;s instability from the thing that breaks the measurement into the thing that makes it work.
-          </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            Assay Design &middot; Bioanalytical Methods &middot; ADME/DMPK
-          </div>
-        </div>
-        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
-          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Read <span class="arrow">&rarr;</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 3: DMDS Computational -->
-      <a href="/case-studies/dmds-computational" class="case-card" style="display: grid; grid-template-columns: 120px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px;">
-          2023 &mdash; 2025
-        </span>
-        <div>
-          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; max-width: 560px; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Computational Protein Binding of DMTS and DMDS
-          </h2>
-          <p style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; max-width: 560px; margin: 0 0 20px;">
-            In-silico companion to the wet-lab binding study &mdash; blind-docked DMTS and DMDS against bovine serum albumin to map candidate binding sites and corroborate weak-affinity findings observed experimentally.
-          </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            Molecular Docking &middot; AutoDock Vina &middot; PyMOL &middot; In Silico
-          </div>
-        </div>
-        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
-          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Read <span class="arrow">&rarr;</span>
-          </span>
-        </div>
-      </a>
-
-      <!-- Card 4: iPSC -->
-      <a href="/case-studies/ipsc-meditation" class="case-card" style="display: grid; grid-template-columns: 120px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
-        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px;">
-          2025 &mdash; PRESENT
-        </span>
-        <div>
-          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; max-width: 560px; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
             iPSC-Derived Motor Neurons as a Model for Meditation-Induced Bloodborne Signaling
           </h2>
-          <p style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; max-width: 560px; margin: 0 0 20px;">
-            Building a human motor neuron model to decode how meditation-induced bloodborne factors reshape neuronal bioenergetics &mdash; the next-generation cellular system for a published research program moving from neuroblastoma cell lines to patient-derivable neurons.
+          <p
+            style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; margin: 0 0 20px;"
+          >
+            Building an iPSC-derived motor neuron platform to study how meditation-induced plasma factors reshape neuronal bioenergetics, the next-generation human cellular model for Dr. Hemal Patel's research program at UCSD. Running the full differentiation protocol and developing a NanoSight NTA and Bradford bioanalytical pipeline to test pre- and post-meditation plasma.
           </p>
           <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            iPSC &middot; Bioanalytical Assay Development &middot; Neurotherapeutics
+            iPSC &middot; MOTOR NEURON DIFFERENTIATION &middot; NANOSIGHT NTA &middot; BIOANALYTICAL ASSAY DEVELOPMENT &middot; NEUROTHERAPEUTICS &middot; EXTRACELLULAR VESICLES
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
+          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            Read <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 2: DMDS Experimental (SHSU) -->
+      <a href="/case-studies/dmds-experimental" class="case-card" style="display: grid; grid-template-columns: 180px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px; white-space: nowrap;">
+          Aug '23 &mdash; May '25
+        </span>
+        <div>
+          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            DMDS&ndash;Albumin Protein Binding
+          </h2>
+          <p
+            style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; margin: 0 0 20px;"
+          >
+            Developed a vapor-phase protein binding assay (VTE) and a validated HPLC-UV method per ICH Q2(R1) to characterize how a volatile cyanide-antidote metabolite binds to human serum albumin. Triangulated with Rapid Equilibrium Dialysis (RED), diagnosed a 25% signal loss as surface partitioning rather than biology, and redesigned the RED plate seal to fix it.
+          </p>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+            VTE &middot; RED &middot; PROTEIN BINDING &middot; HPLC METHOD VALIDATION &middot; ADME/DMPK
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
+          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            Read <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 3: DMDS Computational (SHSU) -->
+      <a href="/case-studies/dmds-computational" class="case-card" style="display: grid; grid-template-columns: 180px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px; white-space: nowrap;">
+          Aug '23 &mdash; May '25
+        </span>
+        <div>
+          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            Computational Protein Binding of DMTS and DMDS
+          </h2>
+          <p
+            style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; margin: 0 0 20px;"
+          >
+            Ran blind molecular docking of DMTS and DMDS against bovine serum albumin in AutoDock Vina to corroborate wet-lab binding data. Best-pose affinities (−2.6 / −2.3 kcal/mol) aligned with VTE and RED results, and shared binding geometries suggested a common transport mechanism for the parent compound and its active metabolite.
+          </p>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+            MOLECULAR DOCKING &middot; AUTODOCK VINA &middot; PYMOL &middot; PROTEIN BINDING &middot; PK MODELING
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
+          <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            Read <span class="arrow">&rarr;</span>
+          </span>
+        </div>
+      </a>
+
+      <!-- Card 4: Anant (Bottom) -->
+      <a href="/case-studies/anant" class="case-card" style="display: grid; grid-template-columns: 180px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
+        <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); padding-top: 6px; white-space: nowrap;">
+          May '22 &mdash; May '23
+        </span>
+        <div>
+          <h2 class="card-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(22px, 2.5vw, 32px); color: var(--text); line-height: 1.2; margin: 0 0 12px; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
+            Analytical Method Development in cGMP Manufacturing
+          </h2>
+          <p
+            style="font-family: Inter, sans-serif; font-weight: 400; font-size: 15px; color: var(--text-muted); line-height: 1.55; margin: 0 0 20px;"
+          >
+            Ran cGMP batch-release testing on 50+ API batches/week using HPLC-UV/Vis and GC-FID, generated 600+ Certificates of Analysis, and validated two RP-HPLC methods per ICH Q2(R1). Supported two FDA audit-readiness reviews that closed with zero critical findings.
+          </p>
+          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+            cGMP &middot; HPLC &middot; GC-FID &middot; METHOD VALIDATION &middot; FDA AUDIT READINESS &middot; ICH Q2(R1)
           </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
@@ -221,41 +234,462 @@ import headshot from '../headshot.jpg'
       </a>
     </div>
   </section>
+  <!-- ── BEYOND BENCH ── -->
+  <section id="beyond-bench" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 60px 0 80px; scroll-margin-top: 70px;">
+    <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 60px;">
+      Beyond Bench
+    </h1>
 
+    <!-- Subheading: Training & Internships -->
+    <div style="display: flex; align-items: center; gap: 12px; margin: 0 0 40px;">
+      <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+        <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+      </svg>
+      <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0;">
+        Training & Internships
+      </h2>
+    </div>
+
+    <div class="training-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <!-- Card 1: BISR -->
+      <div class="training-card" data-modal="modal-bisr">
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: var(--text); margin: 0;">
+          Research and Development Intern
+        </h3>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">
+          Birla Institute of Scientific Research
+          <span style="display: block; margin-top: 6px; font-size: 12px; opacity: 0.8;">Summer '23</span>
+        </p>
+      </div>
+
+      <!-- Card 2: Hungary -->
+      <div class="training-card" data-modal="modal-hungary">
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: var(--text); margin: 0;">
+          Study Abroad Program
+        </h3>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">
+          Chemical Imagination in Hungary
+          <span style="display: block; margin-top: 6px; font-size: 12px; opacity: 0.8;">May '24</span>
+        </p>
+      </div>
+    </div>
+
+  <!-- Modals -->
+  <div id="modal-bisr" class="training-modal">
+    <div class="modal-content">
+      <button class="close-modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 40px; margin-bottom: 60px;">
+        <div style="flex: 1;">
+          <h2 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 12px;">
+            Research and Development Intern
+          </h2>
+          <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 17px; color: var(--text-muted); margin: 0; line-height: 1.5;">
+            Birla Institute of Scientific Research &middot; Jaipur &middot; Summer '23
+          </p>
+          <p style="font-family: Inter, sans-serif; font-size: 15px; color: var(--text-muted); margin: 8px 0 0;">
+            Advisor: <a href="https://bisr.res.in/profile_sampat.php" target="_blank" rel="noopener noreferrer" class="hover-underline" style="color: inherit; text-decoration: none; font-style: normal;">Dr. Sampat Nehra <span style="display: inline-block; position: relative; top: 2px;">&nearr;</span></a>
+          </p>
+        </div>
+        <img 
+          src="/images/logos/Birla-logo.png" 
+          alt="BISR Logo" 
+          style="height: 85px; width: auto; object-fit: contain; opacity: 0.9; filter: brightness(1.2) contrast(1.1);"
+        />
+      </div>
+
+      <div style="font-family: Inter, sans-serif; font-size: 17px; color: var(--text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: 20px;">
+        <p>Before starting my MS, I spent a summer at BISR in Jaipur doing a crash course in the biological side of chemistry. The work spanned microbiology, molecular biology, fermentation, protein extraction, bioinformatics, and early-stage computational drug design, with hands-on time on the equipment and software that underlies each.</p>
+        <p>BISR is where my foundation in the biological sciences actually starts, and it is the bridge between my undergraduate chemistry training and the iPSC and protein-binding work that came later.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-hungary" class="training-modal">
+    <div class="modal-content">
+      <button class="close-modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      
+      <div style="margin-bottom: 60px;">
+        <h2 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 12px;">
+          Chemical Imagination and Innovation in Hungary
+        </h2>
+        <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 17px; color: var(--text-muted); margin: 0; line-height: 1.5;">
+          May '24
+        </p>
+      </div>
+
+      <div style="font-family: Inter, sans-serif; font-size: 17px; color: var(--text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: 24px;">
+        <p>In May 2024 I joined a six-institution study-abroad program across Hungary, funded by SHSU's College of Science and Engineering Technology and the Bearkat Abroad Scholarship. The program was an intensive survey of how chemistry is practiced in different contexts:</p>
+        
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px;">
+          {[
+            { site: 'Biological Research Centre (Szeged)', desc: 'Biophysical chemistry, drug transport, and Vitamin C research in the institute with a direct lineage to Albert Szent-Györgyi.' },
+            { site: 'University of Szeged', desc: 'Pharmaceutical chemistry and the formulation of medicinal products at the Institute of Pharmaceutical Technology.' },
+            { site: 'ELI Facility, Szeged', desc: 'One of the world\'s highest-intensity laser facilities; introduction to laser chemistry.' },
+            { site: 'University of Pécs', desc: 'Chemistry of emerging diseases, mining extraction, and nuclear chemistry.' },
+            { site: 'Eger University', desc: 'Biochemistry of fermentation and natural microfluidics in wine production.' },
+            { site: 'Pannonhalma Abbey', desc: 'Chemical ecology and the historical contributions of monastic institutions to European science education.' }
+          ].map(item => (
+            <li style="border-left: 3px solid var(--accent); padding-left: 20px;">
+              <strong style="color: var(--text); display: block; margin-bottom: 4px;">{item.site}</strong>
+              {item.desc}
+            </li>
+          ))}
+        </ul>
+
+        <p>The program gave me a broader sense of where analytical chemistry sits within the larger scientific economy and connected me to collaborators I've continued to work with on the DMTS cyanide antidote program.</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const cards = document.querySelectorAll('.training-card');
+    const modals = document.querySelectorAll('.training-modal');
+    const closeBtns = document.querySelectorAll('.close-modal');
+
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        const modalId = card.getAttribute('data-modal');
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    const closeModal = (modal) => {
+      modal.classList.remove('active');
+      document.body.style.overflow = '';
+    };
+
+    closeBtns.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeModal(btn.closest('.training-modal'));
+      });
+    });
+
+    modals.forEach(modal => {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal(modal);
+      });
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        modals.forEach(modal => {
+          if (modal.classList.contains('active')) closeModal(modal);
+        });
+      }
+    });
+
+    // Typewriter Logic
+    const typeTarget = document.getElementById('typewriter-text');
+    const accentTarget = document.getElementById('typewriter-accent');
+    const cursor = document.querySelector('.typewriter-cursor');
+    const textToType = "Soon!";
+    let charIndex = 0;
+    let isTyping = false;
+
+    function typeChar() {
+      if (charIndex < textToType.length) {
+        isTyping = true;
+        cursor.classList.add('typing');
+        
+        const char = textToType.charAt(charIndex);
+        if (char === '!') {
+          accentTarget.textContent = char;
+        } else {
+          typeTarget.textContent += char;
+        }
+        
+        charIndex++;
+        setTimeout(typeChar, 150 + Math.random() * 100);
+      } else {
+        isTyping = false;
+        cursor.classList.remove('typing');
+        setTimeout(resetTypewriter, 3000);
+      }
+    }
+
+    function resetTypewriter() {
+      typeTarget.textContent = '';
+      accentTarget.textContent = '';
+      charIndex = 0;
+      setTimeout(typeChar, 500);
+    }
+
+    const typewriterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !isTyping && charIndex === 0) {
+          setTimeout(typeChar, 500);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    if (typeTarget) {
+      typewriterObserver.observe(typeTarget);
+    }
+  </script>
+    <!-- Subheading: Teaching & Mentorship -->
+    <div style="display: flex; align-items: center; gap: 12px; margin: 80px 0 40px;">
+      <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+        <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+      </svg>
+      <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0;">
+        Teaching & Mentorship
+      </h2>
+    </div>
+
+    <div class="training-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+      <!-- Card 1: Teaching Assistant -->
+      <div class="training-card" data-modal="modal-teaching">
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: var(--text); margin: 0;">
+          Graduate Teaching Assistant
+        </h3>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">
+          Sam Houston State University
+          <span style="display: block; margin-top: 6px; font-size: 12px; opacity: 0.8;">Aug '23 &mdash; May '25</span>
+        </p>
+      </div>
+
+      <!-- Card 2: Mentorship -->
+      <div class="training-card" data-modal="modal-mentorship">
+        <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; color: var(--text); margin: 0;">
+          Mentorship
+        </h3>
+        <p style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.2em; margin: 0;">
+          Sam Houston State University
+          <span style="display: block; margin-top: 6px;">&amp; Anant Pharmaceuticals</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Subheading: Side Projects -->
+    <div style="display: flex; align-items: center; gap: 12px; margin: 80px 0 40px;">
+      <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+        <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+      </svg>
+      <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0;">
+        Side Projects
+      </h2>
+    </div>
+
+    <div class="training-grid" style="display: grid; grid-template-columns: 1fr; gap: 24px;">
+      <div class="typewriter-container" style="display: flex; align-items: center; justify-content: center; height: 180px; background: rgba(255, 255, 255, 0.03); border: 1.5px solid var(--accent); border-radius: 16px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 0 15px rgba(155, 58, 74, 0.15);">
+        <p style="font-family: 'Cormorant Garamond', serif; font-size: clamp(24px, 4vw, 36px); font-weight: 600; color: var(--text); margin: 0; letter-spacing: 0.02em;">
+          Coming <span id="typewriter-text"></span><span id="typewriter-accent" style="color: var(--accent); font-weight: 600;"></span><span class="typewriter-cursor"></span>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modals for Teaching & Mentorship -->
+  <div id="modal-teaching" class="training-modal">
+    <div class="modal-content">
+      <button class="close-modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 40px; margin-bottom: 60px;">
+        <div style="flex: 1;">
+          <h2 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 12px;">
+            Graduate Teaching Assistant
+          </h2>
+          <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 17px; color: var(--text-muted); margin: 0; line-height: 1.5;">
+            Sam Houston State University &middot; Aug '23 &mdash; May '25
+          </p>
+        </div>
+        <img 
+          src="/images/logos/shsu_logo.png" 
+          alt="SHSU Logo" 
+          style="height: 80px; width: auto; object-fit: contain; opacity: 0.9; filter: brightness(1.2);"
+        />
+      </div>
+      <div style="font-family: Inter, sans-serif; font-size: 17px; color: var(--text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: 24px;">
+        <p>Across two years at SHSU I taught four distinct laboratory courses, running each section of roughly 24 undergraduates through the week's experiment, grading lab notebooks, and holding office hours. Across these courses I taught 100+ undergraduates per semester.</p>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 20px;">
+          {[
+            { course: 'General Chemistry I Lab', topics: 'Stoichiometry, titration, reaction chemistry, core wet-lab technique, lab-safety protocol.' },
+            { course: 'Inorganic & Environmental Lab', topics: 'Separation techniques, calorimetry, environmental sample workups.' },
+            { course: 'Biochemistry Lab', topics: 'Amino acid chemistry and fingerprint development, gel chromatography, riboflavin assay.' },
+            { course: 'Instrumental Analytical Lab', topics: 'Hands-on training on JASCO V750 UV/Vis, Hitachi F4500 fluorescence spectrophotometer, Varian flame AA, and GC-FID.' }
+          ].map(item => (
+            <li style="border-left: 3px solid var(--accent); padding-left: 20px;">
+              <strong style="color: var(--text); display: block; margin-bottom: 4px;">{item.course}</strong>
+              {item.topics}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-mentorship" class="training-modal">
+    <div class="modal-content">
+      <button class="close-modal">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div style="display: flex; justify-content: space-between; align-items: center; gap: 40px; margin-bottom: 60px;">
+        <h2 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0;">
+          Mentorship
+        </h2>
+        <div style="display: flex; align-items: center; gap: 24px;">
+          <img 
+            src="/images/logos/shsu_logo.png" 
+            alt="SHSU Logo" 
+            style="height: 60px; width: auto; object-fit: contain; opacity: 0.9; filter: brightness(1.2);"
+          />
+          <img 
+            src="/images/logos/anant_logo.png" 
+            alt="Anant Logo" 
+            style="height: 60px; width: auto; object-fit: contain; opacity: 0.9; filter: brightness(1.2);"
+          />
+        </div>
+      </div>
+      <div style="font-family: Inter, sans-serif; font-size: 17px; color: var(--text-muted); line-height: 1.7; display: flex; flex-direction: column; gap: 32px;">
+        <div style="border-left: 3px solid var(--accent); padding-left: 24px;">
+          <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: var(--text); margin-bottom: 8px;">Graduate Research Assistant</h3>
+          <p>Trained and mentored 10 junior researchers (undergraduate and incoming graduate) on LC-MS/MS, HPLC, Chromeleon 7 CDS, method validation, protein binding assays, and GLP-compliant documentation.</p>
+        </div>
+        <div style="border-left: 3px solid var(--accent); padding-left: 24px;">
+          <h3 style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 22px; color: var(--text); margin-bottom: 8px;">Anant Pharmaceuticals QC Intern</h3>
+          <p>Onboarded one summer QC intern on cGMP workflows, HPLC operation, and batch-record review.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── PUBLICATIONS ── -->
+  <section id="publications" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 0 0 120px; scroll-margin-top: 80px;">
+    <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 40px;">
+      Publications
+    </h1>
+
+    <div style="display: grid; grid-template-columns: 1fr; gap: 80px;">
+      <!-- Conference Presentations -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+          <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+            <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+          </svg>
+          <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0;">
+            Conference Presentations
+          </h2>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 28px;">
+          {[
+            {
+              authors: "Esterellas Marquina, F. J.; Khurana, A.; et al.",
+              title: "Spectroscopic Characterization of DMTS–Serum Albumin Binding",
+              venue: "ACS National Meeting, Washington DC. Aug '25",
+              url: "https://www.researchgate.net/publication/403971087_Spectroscopic_Characterization_of_DMTS-Serum_Albumin_Binding"
+            },
+            {
+              authors: "Khurana, A.; Jordan, K.; Perez, A.; Petrikovics, I.; Thompson, D. E.",
+              title: "Disambiguating the binding equilibria of volatile and nonvolatile compounds to protein",
+              venue: "ACS National Meeting, Denver CO. Aug '24 (Paper ID 4108246)",
+              url: "https://www.researchgate.net/publication/403957031_Disambiguating_the_Binding_Equilibria_of_Volatile_and_Nonvolatile_Compounds_to_Protein"
+            },
+            {
+              authors: "Khurana, A.; Gonzalez, K.; Petrikovics, I.; Thompson, D. E.",
+              title: "In vitro Investigation of Dimethyl Disulfide, a metabolite of the cyanide antidote candidate Dimethyl Trisulfide",
+              venue: "ACS Southwest Regional Meeting, Waco TX. Oct '24 (Paper ID 4165425)",
+              url: "https://www.researchgate.net/publication/403956792_In_vitro_Investigation_of_Dimethyl_Disulfide_a_Metabolite_of_the_Cyanide_Antidote_Candidate_Dimethyl_Trisulfide"
+            },
+            {
+              authors: "Khurana, A.; Esterellas Marquina, F. J.; et al.",
+              title: "Protein Binding Studies for the Cyanide Antidote Candidate DMTS",
+              venue: "127th Annual Meeting of the Texas Academy of Science, Odessa TX. Mar '24",
+              award: "First Prize",
+              url: "https://www.researchgate.net/publication/403960018_Protein_Binding_Studies_for_the_Cyanide_Antidote_Candidate_Dimethyl_Trisulfide"
+            }
+          ].map(pub => (
+            <div style="border-left: 3px solid var(--accent); padding-left: 24px; position: relative;">
+              <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0 0 8px;">
+                <a href={pub.url} class="pub-link group" target="_blank" rel="noopener noreferrer">
+                  {pub.authors} <span style="font-style: italic;">{pub.title}.</span> {pub.venue}.
+                  <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
+                </a>
+              </p>
+              {pub.award && (
+                <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em;">
+                  {pub.award}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Thesis -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+          <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+            <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+          </svg>
+          <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0;">
+            Thesis
+          </h2>
+        </div>
+        <div style="border-left: 3px solid var(--accent); padding-left: 24px; position: relative;">
+          <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0;">
+            <a href="/docs/thesis.pdf" class="pub-link group" target="_blank" rel="noopener noreferrer">
+              Khurana, A. (May '25). <span style="font-style: italic;">Protein Binding Studies of Dimethyl Disulfide with Albumin.</span> Master of Science Thesis, Sam Houston State University. Committee: Dr. David E. Thompson (Chair), Dr. Ilona Petrikovics, Dr. Donovan C. Haines.
+              <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
+            </a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── ABOUT ── -->
-  <section id="about" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 120px 0; scroll-margin-top: 120px;">
-    <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 48px;">
+  <section id="about" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 80px 0 60px; scroll-margin-top: 70px;">
+    <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 32px;">
       About
     </h1>
 
-    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 330px; gap: 60px; align-items: start; margin-bottom: 80px;">
+    <div class="about-grid" style="display: grid; grid-template-columns: 1fr 330px; gap: 60px; align-items: center; margin-bottom: 40px;">
       <div>
         <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
-          I'm an analytical and bioanalytical scientist with four years of experience across cGMP pharmaceutical manufacturing and academic research. I hold an MS in Chemistry from Sam Houston State University and currently work as a Research Scientist at UC San Diego Health.
+          Hey! 👋🏼
         </p>
         <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
-          My work focuses on molecules that are difficult to measure: volatile drug candidates, neurons grown from iPSCs, and the bloodborne signals that connect mind and body. At UCSD Health, I'm building a motor neuron platform to study how meditation reshapes neuronal bioenergetics through plasma signaling.
+          I'm a bioanalytical scientist with four years of experience across cGMP pharmaceutical manufacturing and academic research. I hold an MS in Chemistry from Sam Houston State University, where my thesis on cyanide antidote protein binding was funded by the U.S. Department of Defense and the Robert A. Welch Foundation. I now work as a Research Scientist at UC San Diego Health, building an iPSC-derived motor neuron platform to study how meditation reshapes neuronal bioenergetics through plasma signaling.
+        </p>
+        <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 28px;">
+          I'm drawn to molecules that are difficult to measure, and to the ways AI is starting to meet life sciences.
         </p>
         <p style="font-family: Inter, sans-serif; font-size: 17px; line-height: 1.75; color: var(--text); margin-bottom: 32px;">
-          My MS thesis on protein binding studies for cyanide antidote candidates was supported by the U.S. Department of Defense and the Robert A. Welch Foundation. In summer 2024 I joined a six institution research program in Hungary, funded by the College of Science and Engineering Technology at SHSU. I'm also curious about how computational and AI tools can support analytical chemistry work.
+          Outside the lab, I compose music, paint, swim, play pickleball, and travel whenever the calendar allows.✨
         </p>
         
-        <div style="margin-top: 40px;">
+        <div style="margin-top: 48px; display: flex; align-items: center; gap: 24px;">
           <a
             href="/cv/aashni-khurana-cv.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            class="cv-btn"
-            style="display: inline-block; font-family: Inter, sans-serif; font-size: 14px; color: var(--accent); border: 1px solid var(--accent); padding: 12px 24px; text-decoration: none; transition: all 400ms cubic-bezier(0.2, 0, 0, 1);"
+            class="touch-button"
           >
-            Download CV &rarr;
+            Download CV <span class="cv-arrow" style="font-size: 18px; margin-left: 6px; transition: transform 400ms var(--easing);">↗</span>
+          </a>
+
+          <a
+            href="mailto:khurana.aashni1101@gmail.com"
+            class="touch-button"
+          >
+            Get In Touch
           </a>
         </div>
       </div>
 
       <div>
-      <div style="width: 100%; aspect-ratio: 3/4; overflow: hidden; border: 1px solid var(--rule); background: #000000; border-radius: 16px;">
+      <div style="width: 100%; aspect-ratio: 1/1; overflow: hidden; border: 1px solid var(--rule); background: #000000; border-radius: 16px;">
         <img
           src={headshot.src}
           alt="Aashni Khurana"
@@ -269,30 +703,6 @@ import headshot from '../headshot.jpg'
   </section>
 
 
-  <!-- ── CONTACT ── -->
-  <section id="contact" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 120px 0 160px;">
-    <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
-      Contact
-    </h1>
-    <p style="font-family: Inter, sans-serif; font-size: 18px; color: var(--text-muted); line-height: 1.6; margin: 0 0 64px;">
-      For research, collaboration, or a conversation.
-    </p>
-
-    <div style="border-bottom: 1px solid var(--rule);">
-      {[
-        { label: 'Email', value: 'khurana.aashni1101@gmail.com', href: 'mailto:khurana.aashni1101@gmail.com' },
-        { label: 'LinkedIn', value: '@aashni-khurana', href: 'https://linkedin.com/in/aashni-khurana' },
-        { label: 'GitHub', value: '@aashnikhurana', href: 'https://github.com/aashnikhurana' },
-      ].map((item) => (
-        <div style="display: flex; gap: 24px; align-items: baseline; padding: 20px 0; border-top: 1px solid var(--rule);">
-          <span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); min-width: 120px; flex-shrink: 0;">{item.label}</span>
-          <a href={item.href} class="contact-link" style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); text-decoration: none; transition: color 300ms cubic-bezier(0.2, 0, 0, 1);">
-            {item.value}
-          </a>
-        </div>
-      ))}
-    </div>
-  </section>
 
 </Base>
 
@@ -306,12 +716,42 @@ import headshot from '../headshot.jpg'
   .case-card:hover .card-read {
     color: var(--accent) !important;
   }
-  .cv-btn:hover {
-    background: var(--accent) !important;
-    color: #FFFFFF !important;
+  .cv-link:hover {
+    color: var(--accent) !important;
+    text-shadow: 0 0 15px var(--accent), 0 0 30px var(--accent-glow);
+  }
+  .cv-link:hover .cv-arrow {
+    transform: translate(3px, -3px);
   }
   .contact-link:hover {
     color: var(--accent) !important;
+  }
+
+  /* touch button (CV & Get In Touch) */
+  .touch-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    background: #000;
+    color: #fff;
+    height: 44px; /* Fixed height */
+    padding: 0 28px;
+    border-radius: 16px;
+    font-family: Inter, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    border: 1px solid var(--accent); /* Stays pink */
+    position: relative;
+    transition: all 400ms var(--easing);
+  }
+  .touch-button:hover {
+    color: var(--accent); /* Text turns pink */
+    box-shadow: 0 0 25px rgba(155, 58, 74, 0.25);
+  }
+  .touch-button:hover .cv-arrow {
+    opacity: 1;
   }
 
   /* Tagline hover glow */
@@ -327,6 +767,108 @@ import headshot from '../headshot.jpg'
     text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent), 0 0 90px var(--accent-glow), 0 0 150px var(--accent-glow);
   }
 
+  .training-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1.5px solid var(--accent);
+    border-radius: 16px;
+    padding: 32px;
+    cursor: pointer;
+    transition: all 400ms var(--easing);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    box-shadow: 0 0 15px rgba(155, 58, 74, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+  .training-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    box-shadow: 0 0 25px rgba(155, 58, 74, 0.45);
+  }
+
+  /* Typewriter Cursor */
+  .typewriter-cursor {
+    display: inline-block;
+    width: 3px;
+    height: 0.9em;
+    background: var(--accent);
+    margin-left: 4px;
+    vertical-align: middle;
+    animation: cursor-blink 1s infinite;
+  }
+
+  @keyframes cursor-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .typewriter-cursor.typing {
+    animation: none;
+    opacity: 1;
+  }
+
+  /* Modal System */
+  .training-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    transition: opacity 400ms var(--easing);
+  }
+  .training-modal.active {
+    display: flex;
+    opacity: 1;
+  }
+  .modal-content {
+    background: rgba(14, 14, 16, 0.94);
+    backdrop-filter: blur(32px);
+    -webkit-backdrop-filter: blur(32px);
+    border: 1.5px solid var(--accent);
+    border-radius: 24px;
+    width: 100%;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: 60px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 400ms var(--easing);
+    box-shadow: 
+      0 32px 100px rgba(0, 0, 0, 0.9),
+      0 0 25px rgba(155, 58, 74, 0.35),
+      inset 0 0 15px rgba(155, 58, 74, 0.15);
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .modal-content::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari/Webkit */
+  }
+  .training-modal.active .modal-content {
+    transform: translateY(0);
+  }
+  .close-modal {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 8px;
+    transition: color 300ms var(--easing);
+  }
+  .close-modal:hover {
+    color: var(--accent);
+  }
+
   @media (max-width: 767px) {
     .hero-inner {
       grid-template-columns: 1fr !important;
@@ -337,5 +879,7 @@ import headshot from '../headshot.jpg'
     .case-card { grid-template-columns: 1fr !important; gap: 16px 0 !important; }
     .case-card > div:last-child { justify-content: flex-start !important; }
     .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .training-grid { grid-template-columns: 1fr !important; }
+    .modal-content { padding: 40px 24px; }
   }
 </style>

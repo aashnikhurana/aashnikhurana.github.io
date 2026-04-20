@@ -1,17 +1,14 @@
 <nav
   id="site-nav"
-  style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 24px 7vw; transition: all 400ms cubic-bezier(0.2, 0, 0, 1);"
+  style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; padding: 24px 7vw; transition: all 400ms var(--easing);"
   aria-label="Site navigation"
 >
   <div style="display: flex; align-items: center; justify-content: space-between;">
-    <div
-      id="nav-wordmark"
-      style="display: flex; align-items: center; height: 40px; border-radius: 999px; border: 1px solid transparent; transition: all 400ms cubic-bezier(0.2, 0, 0, 1);"
-    >
+    <div id="nav-wordmark">
       <a
         href="/"
-        style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: #FFFFFF; text-decoration: none; padding: 0 24px; transition: padding 400ms var(--easing);"
-        class="wordmark-link"
+        class="section-heading"
+        style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: #FFFFFF; text-decoration: none;"
       >
         AASHNI KHURANA
       </a>
@@ -19,23 +16,31 @@
 
     <ul
       id="nav-links"
-      style="display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0; height: 40px; border-radius: 999px; border: 1px solid transparent; transition: all 400ms cubic-bezier(0.2, 0, 0, 1);"
+      style="display: flex; align-items: center; gap: 32px; list-style: none; margin: 0; padding: 0;"
       class="nav-desktop-links"
     >
-      <li style="padding-left: 24px; transition: padding 400ms var(--easing);" class="pill-first-li">
-        <a href="/#research" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="hover-underline nav-link">Research</a>
+      <li class="home-nav-item">
+        <a href="/#" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">Home</a>
       </li>
 
       <li>
-        <a href="/#about" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="hover-underline nav-link">About</a>
+        <a href="/#research" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">Research</a>
       </li>
 
       <li>
-        <a href="/#contact" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="hover-underline nav-link">Contact</a>
+        <a href="/#beyond-bench" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">Beyond Bench</a>
       </li>
 
-      <li style="padding-right: 24px; transition: padding 400ms var(--easing);" class="pill-last-li">
-        <a href="/cv/aashni-khurana-cv.pdf" target="_blank" rel="noopener noreferrer" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="hover-underline nav-link">CV</a>
+      <li>
+        <a href="/#publications" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">Publications</a>
+      </li>
+
+      <li>
+        <a href="/#about" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">About</a>
+      </li>
+
+      <li>
+        <a href="/cv/aashni-khurana-cv.pdf" target="_blank" rel="noopener noreferrer" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #FFFFFF; text-decoration: none;" class="section-heading hover-underline nav-link">CV</a>
       </li>
     </ul>
 
@@ -71,8 +76,9 @@
   </button>
   <nav style="display: flex; flex-direction: column; align-items: center; gap: 32px; list-style: none;" aria-label="Mobile navigation">
     <a href="/#research" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Research</a>
+    <a href="/#beyond-bench" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Beyond Bench</a>
+    <a href="/#publications" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Publications</a>
     <a href="/#about" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">About</a>
-    <a href="/#contact" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">Contact</a>
     <a href="/cv/aashni-khurana-cv.pdf" target="_blank" rel="noopener noreferrer" class="nav-overlay-link" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 32px; color: var(--text); text-decoration: none;">CV</a>
   </nav>
 </div>
@@ -86,25 +92,30 @@
     .nav-mobile-btn { display: none !important; }
   }
 
-  /* Scrolled state for the pill */
+  /* Conditional Home Link */
+  .home-nav-item {
+    width: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 500ms var(--easing);
+    margin-right: -32px; /* Offset the gap when hidden */
+  }
+
+  #site-nav.scrolled .home-nav-item {
+    width: 45px;
+    opacity: 1;
+    visibility: visible;
+    margin-right: 0;
+  }
+
   #site-nav.scrolled {
     padding-top: 16px !important;
     padding-bottom: 16px !important;
-  }
-
-  #site-nav.scrolled #nav-links,
-  #site-nav.scrolled #nav-wordmark {
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7) !important;
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
   }
-
-  /* Adjust padding when it becomes a pill */
-  #site-nav:not(.scrolled) .pill-first-li { padding-left: 0 !important; }
-  #site-nav:not(.scrolled) .pill-last-li { padding-right: 0 !important; }
-  #site-nav:not(.scrolled) .wordmark-link { padding-left: 0 !important; padding-right: 0 !important; }
 
   .nav-overlay-link {
     transition: color 400ms cubic-bezier(0.2, 0, 0, 1);

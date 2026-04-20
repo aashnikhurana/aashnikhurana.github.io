@@ -132,3 +132,24 @@
 .arrow-nudge:hover .arrow {
   transform: translateX(4px);
 }
+
+/* ── Publication link hover ── */
+.pub-link {
+  color: inherit;
+  text-decoration: none;
+  transition: text-shadow 300ms var(--easing);
+}
+
+.pub-link:hover {
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+
+/* ── Section heading glow ── */
+.section-heading {
+  transition: text-shadow 400ms var(--easing);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.15);
+}
+
+.section-heading:hover {
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.45);
+}
