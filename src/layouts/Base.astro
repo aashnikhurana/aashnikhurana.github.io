@@ -13,7 +13,7 @@ const {
   description = 'I design and validate bioanalytical assays for molecules that resist standard methods. Research Scientist at UC San Diego Health.',
 } = Astro.props
 
-const pageTitle = title === 'Home' ? 'Aashni Khurana' : `${title} — Aashni Khurana`
+const pageTitle = title === 'Home' ? 'Aashni Khurana - Bioanalytical Researcher' : `${title} — Aashni Khurana`
 const canonicalURL = new URL(Astro.url.pathname, Astro.site)
 ---
 
@@ -24,17 +24,52 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site)
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="Aashni Khurana, bioanalytical scientist, research scientist, UC San Diego Health, Sam Houston State University, protein binding, cyanide antidote, iPSC motor neurons, HPLC, GC-FID, cGMP, analytical chemistry, medicinal chemistry" />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Aashni Khurana" />
-    <meta property="og:description" content="I design and validate bioanalytical assays for molecules that resist standard methods. Research Scientist at UC San Diego Health." />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:image" content="/images/thesis/hero_albumin.jpg" />
+    <meta property="og:image:alt" content="Aashni Khurana - Bioanalytical Research" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Aashni Khurana" />
-    <meta name="twitter:description" content="I design and validate bioanalytical assays for molecules that resist standard methods." />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/images/thesis/hero_albumin.jpg" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Aashni Khurana",
+      "jobTitle": "Research Scientist",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "UC San Diego Health"
+      },
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Sam Houston State University"
+      },
+      "description": "Bioanalytical scientist specializing in protein binding, iPSC-derived motor neurons, and analytical method development.",
+      "url": "https://aashnikhurana.github.io",
+      "sameAs": [
+        "https://linkedin.com/in/aashni-khurana"
+      ],
+      "knowsAbout": [
+        "Bioanalytical Chemistry",
+        "Protein Binding",
+        "iPSC Motor Neurons",
+        "HPLC",
+        "GC-FID",
+        "cGMP",
+        "Cyanide Antidote Research"
+      ]
+    }
+    </script>
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
