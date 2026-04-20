@@ -10,13 +10,6 @@
   --accent-glow: rgba(155, 58, 74, 0.3);
   --rule: rgba(237, 234, 227, 0.08);
   --easing: cubic-bezier(0.2, 0, 0, 1);
-  
-  /* Touch & Mobile standards */
-  --touch-target: 44px;
-  --safe-top: env(safe-area-inset-top, 0px);
-  --safe-bottom: env(safe-area-inset-bottom, 0px);
-  --safe-left: env(safe-area-inset-left, 0px);
-  --safe-right: env(safe-area-inset-right, 0px);
 }
 
 @layer base {

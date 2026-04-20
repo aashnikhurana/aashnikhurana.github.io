@@ -265,13 +265,8 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     color: var(--accent) !important;
   }
 
-  /* Mobile optimizations */
+  /* Mobile: sidebar below prose */
   @media (max-width: 767px) {
-    article {
-      width: 86% !important;
-      padding: 40px 0 80px !important;
-    }
-
     .cs-grid {
       grid-template-columns: 1fr !important;
       gap: 48px !important;
@@ -279,23 +274,6 @@ const metaDescription = description ?? `${title} — ${subtitle}`
 
     .cs-sidebar {
       position: static !important;
-      padding-top: 48px;
-      border-top: 1px solid var(--rule);
-    }
-
-    .breadcrumb-link, .pagination-link {
-      padding: 12px 0;
-      display: inline-block;
-      min-height: 44px;
-    }
-    
-    .pagination-link {
-      display: flex;
-      align-items: center;
-    }
-
-    .cs-prose :global(p) {
-      font-size: 16px !important;
     }
   }
 </style>
