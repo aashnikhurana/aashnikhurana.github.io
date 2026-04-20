@@ -395,30 +395,44 @@ import headshot from '../headshot.jpg'
     const textToType = "...";
     let charIndex = 0;
     let isTyping = false;
+    let isDeleting = false;
 
     function typeChar() {
-      if (charIndex < textToType.length) {
-        isTyping = true;
-        cursor.classList.add('typing');
-        typeTarget.textContent += textToType.charAt(charIndex);
-        charIndex++;
-        setTimeout(typeChar, 400); // Slower, intentional dot typing
-      } else {
-        isTyping = false;
-        cursor.classList.remove('typing');
-        setTimeout(resetTypewriter, 2000);
-      }
-    }
+      if (!typeTarget) return;
 
-    function resetTypewriter() {
-      typeTarget.textContent = '';
-      charIndex = 0;
-      setTimeout(typeChar, 500);
+      isTyping = true;
+      cursor.classList.add('typing');
+
+      if (!isDeleting) {
+        if (charIndex < textToType.length) {
+          typeTarget.textContent += textToType.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeChar, 400); // Slower, intentional dot typing
+        } else {
+          cursor.classList.remove('typing');
+          isTyping = false;
+          setTimeout(() => {
+            isDeleting = true;
+            typeChar();
+          }, 2000);
+        }
+      } else {
+        if (charIndex > 0) {
+          typeTarget.textContent = textToType.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeChar, 120); // faster delete speed
+        } else {
+          isDeleting = false;
+          cursor.classList.remove('typing');
+          isTyping = false;
+          setTimeout(typeChar, 500);
+        }
+      }
     }
 
     const typewriterObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting && !isTyping && charIndex === 0) {
+        if (entry.isIntersecting && !isTyping && !isDeleting && charIndex === 0) {
           setTimeout(typeChar, 500);
         }
       });
