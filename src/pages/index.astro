@@ -62,7 +62,8 @@ import headshot from '../headshot.jpg'
         <div style="position: relative; width: 40vw; max-width: 520px;">
           <!-- 3D Interactive Model -->
           <div
-            style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); filter: brightness(0.85) saturate(1.1); cursor: grab;"
+            class="laser-cursor"
+            style="width: 100%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); -webkit-mask-image: radial-gradient(ellipse at center, black 55%, transparent 90%); filter: brightness(0.85) saturate(1.1);"
           >
             <div 
               id="albumin-viewer"
@@ -152,7 +153,7 @@ import headshot from '../headshot.jpg'
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
           <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Read <span class="arrow">&rarr;</span>
+            Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow" style="display: inline-block; vertical-align: middle; margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </span>
         </div>
       </a>
@@ -202,12 +203,13 @@ import headshot from '../headshot.jpg'
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
           <span class="card-read arrow-nudge" style="font-family: Inter, sans-serif; font-size: 14px; font-style: italic; color: var(--text-muted); transition: color 400ms cubic-bezier(0.2, 0, 0, 1);">
-            Read <span class="arrow">&rarr;</span>
+            Read <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="arrow" style="display: inline-block; vertical-align: middle; margin-left: 4px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
           </span>
         </div>
       </a>
 
       
+
 
       <!-- Card 4: Anant (Bottom) -->
       <a href="/case-studies/anant" class="case-card" style="display: grid; grid-template-columns: 180px 1fr 140px; gap: 0 32px; align-items: start; text-decoration: none; padding: 40px 0; border-top: 1px solid var(--rule); transition: border-color 400ms cubic-bezier(0.2, 0, 0, 1); margin-top: 64px;">
@@ -291,7 +293,7 @@ import headshot from '../headshot.jpg'
             Birla Institute of Scientific Research &middot; Jaipur &middot; Summer '23
           </p>
           <p style="font-family: Inter, sans-serif; font-size: 15px; color: var(--text-muted); margin: 8px 0 0;">
-            Advisor: <a href="https://bisr.res.in/profile_sampat.php" target="_blank" rel="noopener noreferrer" class="hover-underline" style="color: inherit; text-decoration: none; font-style: normal;">Dr. Sampat Nehra <span style="display: inline-block; position: relative; top: 2px;">&nearr;</span></a>
+            Advisor: <a href="https://bisr.res.in/profile_sampat.php" target="_blank" rel="noopener noreferrer" class="hover-underline" style="color: inherit; text-decoration: none; font-style: normal;">Dr. Sampat Nehra <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg></a>
           </p>
         </div>
         <img 
@@ -619,7 +621,7 @@ import headshot from '../headshot.jpg'
               <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0 0 8px;">
                 <a href={pub.url} class="pub-link group" target="_blank" rel="noopener noreferrer">
                   <span set:html={pub.authors.replace('Khurana, A.', '<strong>Khurana, A.</strong>')} /> <span style="font-style: italic;">{pub.title}.</span> {pub.venue}.
-                  <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[-1px]"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
                 </a>
               </p>
               {pub.award && (
@@ -646,12 +648,35 @@ import headshot from '../headshot.jpg'
           <p style="font-family: Inter, sans-serif; font-size: 16px; color: var(--text); line-height: 1.6; margin: 0;">
             <a href="/docs/thesis.pdf" class="pub-link group" target="_blank" rel="noopener noreferrer">
               <strong>Khurana, A.</strong> (May '25). <span style="font-style: italic;">Protein Binding Studies of Dimethyl Disulfide with Albumin.</span> Master of Science Thesis, Sam Houston State University. Committee: Dr. David E. Thompson (Chair), Dr. Ilona Petrikovics, Dr. Donovan C. Haines.
-              <span class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[2px]">&nearr;</span>
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-1 relative top-[-1px]"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
             </a>
           </p>
         </div>
       </div>
+      
+      <!-- Certifications -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 32px;">
+          <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: var(--accent); filter: drop-shadow(0 0 3px var(--accent)) drop-shadow(0 0 8px var(--accent)); flex-shrink: 0;">
+            <path d="M12 0c.5 6 1 11 12 12-11 1-11.5 6-12 12-.5-6-1-11-12-12 11-1 11.5-6 12-12z" />
+          </svg>
+          <a 
+            href="https://www.linkedin.com/in/aashni-khurana/details/certifications/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            style="text-decoration: none;"
+            class="group"
+          >
+            <h2 class="section-heading" style="font-family: 'JetBrains Mono', monospace; font-size: 15px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text); margin: 0; display: flex; align-items: center;">
+              Certifications
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="inline-block transition-transform duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 opacity-60 ml-2 relative top-[-1px]"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+            </h2>
+          </a>
+        </div>
+      </div>
     </div>
+
+
   </section>
 
   <!-- ── ABOUT ── -->
@@ -682,7 +707,7 @@ import headshot from '../headshot.jpg'
             rel="noopener noreferrer"
             class="touch-button"
           >
-            Download CV <span class="cv-arrow">↗</span>
+            Download CV <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="cv-arrow" style="margin-left: 6px; transition: transform 400ms var(--easing);"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
           </a>
 
           <a
@@ -713,6 +738,10 @@ import headshot from '../headshot.jpg'
 </Base>
 
 <style>
+  .laser-cursor {
+    cursor: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cmFkaWFsR3JhZGllbnQgaWQ9Imxhc2VyR3JhZCIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNTAlIj48c3RvcCBvZmZzZXQ9IjAlIiBzdG9wLWNvbG9yPSJ3aGl0ZSIgLz48c3RvcCBvZmZzZXQ9IjIwJSIgc3RvcC1jb2xvcj0iI0ZGNkI4QiIgLz48c3RvcCBvZmZzZXQ9IjYwJSIgc3RvcC1jb2xvcj0iIzlCM0E0QSIgc3RvcC1vcGFjaXR5PSIwLjYiIC8+PHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjOUIzQTRBIiBzdG9wLW9wYWNpdHk9IjAiIC8+PC9yYWRpYWxHcmFkaWVudD48L2RlZnM+PGNpcmNsZSBjeD0iMTYiIGN5PSIxNiIgcj0iMTIiIGZpbGw9InVybCgjbGFzZXJHcmFkKSIgLz48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIyIiBmaWxsPSJ3aGl0ZSIgLz48L3N2Zz4K') 16 16, auto;
+  }
+
   .case-card:hover .card-title {
     color: var(--accent) !important;
   }
@@ -739,8 +768,8 @@ import headshot from '../headshot.jpg'
     align-items: center;
     justify-content: center;
     box-sizing: border-box;
-    background: #000;
-    color: #fff;
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text-muted);
     height: 44px; /* Fixed height */
     padding: 0 28px;
     border-radius: 16px;
@@ -748,13 +777,17 @@ import headshot from '../headshot.jpg'
     font-size: 15px;
     font-weight: 500;
     text-decoration: none;
-    border: 1px solid var(--accent); /* Stays pink */
+    border: 1.5px solid var(--accent);
     position: relative;
     transition: all 400ms var(--easing);
+    box-shadow: 0 0 15px rgba(155, 58, 74, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
   }
   .touch-button:hover {
-    color: var(--accent); /* Text turns pink */
-    box-shadow: 0 0 25px rgba(155, 58, 74, 0.25);
+    background: rgba(255, 255, 255, 0.06);
+    color: var(--text);
+    box-shadow: 0 0 25px rgba(155, 58, 74, 0.45);
   }
 
   .touch-button .cv-arrow {
