@@ -25,7 +25,7 @@ const metaDescription = description ?? `${title} — ${subtitle}`
 ---
 
 <Base title={title} description={metaDescription}>
-  <article style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 80px 0 120px;">
+  <article style="max-width: 1080px; margin: 0 auto; padding: 80px 0 120px;">
 
     <!-- Breadcrumb -->
     <nav aria-label="Breadcrumb" style="margin-bottom: 48px;">
@@ -54,7 +54,7 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     <hr style="border: none; border-top: 1px solid var(--rule); margin: 0 0 48px;" />
 
     <!-- Two-column: prose + sidebar -->
-    <div class="cs-grid" style="display: grid; grid-template-columns: 1fr 240px; gap: 80px; align-items: start;">
+    <div class="cs-grid">
 
       <!-- Main prose -->
       <div class="cs-prose" style="max-width: 720px;">
@@ -266,8 +266,15 @@ const metaDescription = description ?? `${title} — ${subtitle}`
     color: var(--accent) !important;
   }
 
+  .cs-grid {
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    gap: 80px;
+    align-items: start;
+  }
+
   /* Mobile: sidebar below prose */
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     .cs-grid {
       grid-template-columns: 1fr !important;
       gap: 48px !important;

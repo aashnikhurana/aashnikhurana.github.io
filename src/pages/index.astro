@@ -11,7 +11,7 @@ import headshot from '../headshot.jpg'
   <!-- ── HERO ── -->
   <section
     id="hero"
-    style="width: 70%; max-width: 1080px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
+    style="max-width: 1080px; margin: 0 auto; min-height: 100vh; position: relative; display: flex; align-items: center;"
   >
 
 
@@ -48,7 +48,13 @@ import headshot from '../headshot.jpg'
           class="animate-fade-rise-d600"
           style="font-family: Inter, sans-serif; font-weight: 400; font-size: 18px; color: var(--text-muted); line-height: 1.6; margin-top: 24px; margin-bottom: 0;"
         >
-          <div style="white-space: nowrap;">Bioanalytical chemistry &middot; Method development &middot; Drug discovery</div>
+          <div style="display: flex; flex-wrap: wrap; gap: 8px 12px;">
+            <span>Bioanalytical chemistry</span>
+            <span>&middot;</span>
+            <span>Method development</span>
+            <span>&middot;</span>
+            <span>Drug discovery</span>
+          </div>
           <div style="margin-top: 12px; letter-spacing: 0.02em;">
             Based in San Diego &middot; <span style="color: var(--accent);">Open to work</span>
           </div>
@@ -119,7 +125,7 @@ import headshot from '../headshot.jpg'
 
 
   <!-- ── RESEARCH ── -->
-  <section id="research" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 120px 0 80px;">
+  <section id="research" style="max-width: 1080px; margin: 0 auto; padding: 120px 0 80px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
       Research
     </h1>
@@ -238,7 +244,7 @@ import headshot from '../headshot.jpg'
     </div>
   </section>
   <!-- ── BEYOND BENCH ── -->
-  <section id="beyond-bench" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 60px 0 80px; scroll-margin-top: 70px;">
+  <section id="beyond-bench" style="max-width: 1080px; margin: 0 auto; padding: 60px 0 80px; scroll-margin-top: 70px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 60px;">
       Beyond Bench
     </h1>
@@ -573,7 +579,7 @@ import headshot from '../headshot.jpg'
   </div>
 
   <!-- ── PUBLICATIONS ── -->
-  <section id="publications" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 0 0 120px; scroll-margin-top: 80px;">
+  <section id="publications" style="max-width: 1080px; margin: 0 auto; padding: 0 0 120px; scroll-margin-top: 80px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 40px;">
       Publications
     </h1>
@@ -680,7 +686,7 @@ import headshot from '../headshot.jpg'
   </section>
 
   <!-- ── ABOUT ── -->
-  <section id="about" style="width: 70%; max-width: 1080px; margin: 0 auto; padding: 80px 0 60px; scroll-margin-top: 70px;">
+  <section id="about" style="max-width: 1080px; margin: 0 auto; padding: 80px 0 60px; scroll-margin-top: 70px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 32px;">
       About
     </h1>
@@ -700,7 +706,7 @@ import headshot from '../headshot.jpg'
           Outside the lab, I compose music, paint, swim, play pickleball, and travel whenever the calendar allows.✨
         </p>
         
-        <div style="margin-top: 48px; display: flex; align-items: center; gap: 24px;">
+        <div style="margin-top: 48px; display: flex; align-items: center; gap: 24px;" class="about-btns">
           <a
             href="/cv/aashni-khurana-cv.pdf"
             target="_blank"
@@ -919,16 +925,25 @@ import headshot from '../headshot.jpg'
     color: var(--accent);
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 1024px) {
     .hero-inner {
       grid-template-columns: 1fr !important;
-      gap: 48px !important;
+      gap: 32px !important;
+      text-align: center;
     }
+    .hero-inner > div { padding-right: 0 !important; }
     .hero-image-col { order: -1; }
-    .hero-image-col > div { width: 60vw !important; max-width: 60vw !important; }
+    .hero-image-col > div { 
+      width: 70vw !important; 
+      max-width: 340px !important; 
+      margin: 0 auto;
+    }
     .case-card { grid-template-columns: 1fr !important; gap: 16px 0 !important; }
     .case-card > div:last-child { justify-content: flex-start !important; }
-    .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; }
+    .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; text-align: center; }
+    .about-grid div:first-child { order: 2; }
+    .about-grid div:last-child { order: 1; margin: 0 auto; }
+    .about-btns { justify-content: center; }
     .training-grid { grid-template-columns: 1fr !important; }
     .modal-content { padding: 40px 24px; }
   }
