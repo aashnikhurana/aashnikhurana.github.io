@@ -40,14 +40,19 @@ const metaDescription = description ?? `${title} — ${subtitle}`
 
     <!-- Header -->
     <header style="margin-bottom: 48px;">
-      <h1 style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(36px, 5vw, 56px); color: var(--text); line-height: 1.1; margin: 0 0 16px;">
+      <h1 class="cs-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 5vw, 56px); color: var(--text); line-height: 1.1; margin: 0 0 16px;">
         {title}
       </h1>
-      <p style="font-family: Inter, sans-serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin: 0 0 20px; line-height: 1.5;">
+      <p class="cs-subtitle" style="font-family: Inter, sans-serif; font-style: italic; font-size: 18px; color: var(--text-muted); margin: 0 0 20px; line-height: 1.5;">
         {subtitle}
       </p>
-      <div style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-        {tags.join(' \u00B7 ')}
+      <div class="cs-tags" style="display: flex; flex-wrap: wrap; gap: 8px 16px; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
+        {tags.map((tag, idx) => (
+          <>
+            <span>{tag}</span>
+            {idx < tags.length - 1 && <span style="opacity: 0.3;">&middot;</span>}
+          </>
+        ))}
       </div>
     </header>
 
@@ -73,28 +78,31 @@ const metaDescription = description ?? `${title} — ${subtitle}`
       <>
         <hr style="border: none; border-top: 1px solid var(--rule); margin: 80px 0 40px;" />
         <nav
+          class="case-study-pagination"
           style="display: flex; justify-content: space-between; align-items: center; gap: 24px;"
           aria-label="Case study navigation"
         >
-          <div>
+          <div style="flex: 1;">
             {prevStudy && (
               <a
                 href={prevStudy.href}
                 class="pagination-link"
-                style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1);"
+                style="display: flex; flex-direction: column; text-decoration: none; color: var(--text-dim); transition: color 0.3s ease; gap: 8px;"
               >
-                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-right: 4px; position: relative; top: -1px;"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> {prevStudy.title}
+                <span class="pagination-label" style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: white;">&larr; PREVIOUS</span>
+                <span class="pagination-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px;">{prevStudy.title}</span>
               </a>
             )}
           </div>
-          <div>
+          <div style="flex: 1; text-align: right;">
             {nextStudy && (
               <a
                 href={nextStudy.href}
                 class="pagination-link"
-                style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 600; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 400ms cubic-bezier(0.2, 0, 0, 1); text-align: right;"
+                style="display: flex; flex-direction: column; align-items: flex-end; text-decoration: none; color: var(--text-dim); transition: color 0.3s ease; gap: 8px;"
               >
-                {nextStudy.title} <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline-block; vertical-align: middle; margin-left: 4px; position: relative; top: -1px;"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <span class="pagination-label" style="font-family: 'JetBrains Mono', monospace; font-size: 10px; letter-spacing: 0.1em; color: white;">NEXT &rarr;</span>
+                <span class="pagination-title" style="font-family: 'Cormorant Garamond', Georgia, serif; font-size: 20px;">{nextStudy.title}</span>
               </a>
             )}
           </div>
@@ -152,6 +160,7 @@ const metaDescription = description ?? `${title} — ${subtitle}`
   /* Image + caption */
   .cs-prose :global(.cs-image-wrap) {
     margin: 40px 0 48px;
+    text-align: center;
   }
 
   .cs-prose :global(.cs-image-grid) {
@@ -173,21 +182,29 @@ const metaDescription = description ?? `${title} — ${subtitle}`
   }
 
   .cs-prose :global(.cs-image-wrap img) {
-    width: 100%;
+    max-width: 80%;
+    width: auto;
     height: auto;
     border-radius: 2px;
     display: block;
+    margin: 0 auto;
+  }
+
+  /* Force full width on grid images */
+  .cs-prose :global(.cs-image-grid .cs-image-wrap img) {
+    max-width: 100%;
   }
 
   .cs-prose :global(.cs-caption) {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
     color: var(--text-muted);
     margin: 16px 0 0;
-    text-transform: uppercase;
+    text-transform: none; /* Removed all-caps */
     text-align: center;
+    line-height: 1.5;
   }
 
   /* Sidebar typography */
@@ -275,13 +292,151 @@ const metaDescription = description ?? `${title} — ${subtitle}`
 
   /* Mobile: sidebar below prose */
   @media (max-width: 1024px) {
-    .cs-grid {
-      grid-template-columns: 1fr !important;
-      gap: 48px !important;
+    article {
+      display: flex !important;
+      flex-direction: column !important;
+      padding-left: 7vw !important;
+      padding-right: 7vw !important;
+      padding-top: 64px !important;
     }
 
-    .cs-sidebar {
-      position: static !important;
+    nav[aria-label="Breadcrumb"] { order: -5 !important; margin-bottom: 24px !important; }
+    header { order: -4 !important; margin-bottom: 24px !important; }
+
+    .cs-grid {
+      display: contents !important;
+    }
+
+    .cs-sidebar, .cs-sidebar > :global(div) {
+      display: contents !important;
+    }
+
+    /* All sidebar blocks go ABOVE prose together */
+    .cs-sidebar :global(.sidebar-block:not(.techniques-block)) {
+      display: block !important;
+      order: -3 !important;
+      margin-bottom: 24px !important;
+      border-top: none !important;
+      padding-top: 0 !important;
+    }
+
+    /* Main header divider stays ABOVE prose but BELOW all meta */
+    hr[style*="margin: 0 0 48px"] { 
+      display: block !important;
+      order: -2 !important; 
+      margin-top: 24px !important;
+      margin-bottom: 32px !important; 
+    }
+
+    /* Prose stays in MIDDLE */
+    .cs-prose {
+      display: block !important;
+      order: -1 !important;
+      margin-top: 0 !important;
+      margin-bottom: 48px !important;
+    }
+
+    /* Pagination stays at the very bottom */
+    hr[style*="margin: 80px 0 40px"] { order: 2 !important; margin: 40px 0 24px !important; }
+    nav[aria-label="Case study navigation"] { order: 3 !important; margin-bottom: 80px !important; }
+
+    .cs-title {
+      font-size: 28px !important;
+      margin-bottom: 10px !important;
+    }
+
+    .cs-subtitle {
+      font-size: 14px !important;
+      margin-bottom: 12px !important;
+    }
+
+    .cs-tags {
+      font-size: 9px !important;
+      gap: 4px 10px !important;
+    }
+
+    .cs-sidebar :global(.sidebar-label) {
+      font-size: 11px !important;
+      margin-bottom: 6px !important;
+    }
+
+    .cs-sidebar :global(.sidebar-value) {
+      font-size: 13px !important;
+    }
+
+    .cs-sidebar :global(.sidebar-logo) {
+      width: 70px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .cs-sidebar :global(.sidebar-logo.ucsd-health) {
+      width: 70px !important;
+      margin-bottom: 16px !important;
+    }
+
+    .cs-sidebar :global(.techniques-block) {
+      display: none !important;
+    }
+
+    .cs-prose :global(.cs-caption) {
+      font-size: 11px !important;
+      margin-top: 12px !important;
+      line-height: 1.4 !important;
+    }
+
+    .cs-prose :global(p) {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+      margin-bottom: 24px !important;
+    }
+
+    .cs-prose :global(h2) {
+      font-size: 24px !important;
+      margin-top: 32px !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* Homogenize pagination on mobile */
+    nav[aria-label="Case study navigation"] {
+      flex-direction: row !important;
+      justify-content: flex-end !important; /* Push everything to right */
+      align-items: center !important;
+      gap: 16px !important;
+      padding-bottom: 24px !important;
+    }
+
+    nav[aria-label="Case study navigation"] div {
+      flex: 0 1 auto !important;
+    }
+
+    /* If both exist, keep Previous on left */
+    nav[aria-label="Case study navigation"] div:first-child {
+      margin-right: auto !important;
+    }
+
+    .pagination-link {
+      align-items: flex-start !important;
+    }
+
+    .pagination-title {
+      display: none !important;
+    }
+
+    .pagination-label {
+      color: white !important;
+      font-size: 11px !important;
+      letter-spacing: 0.2em !important;
+    }
+
+    hr[style*="margin: 80px 0 40px"] {
+      margin-top: 24px !important;
+      margin-bottom: 16px !important;
+    }
+
+    /* Reduce black area at bottom */
+    footer {
+      padding-top: 24px !important;
+      padding-bottom: 24px !important;
     }
   }
 </style>

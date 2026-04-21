@@ -105,27 +105,28 @@ import headshot from '../headshot.jpg'
       </div>
     </div>
 
-    <!-- Scroll cue — outer div handles centering, inner handles bob animation -->
-    <div
-      style="position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); pointer-events: none;"
-      aria-hidden="true"
+    <a
+      href="#research"
+      class="scroll-cue-btn"
+      style="position: absolute; bottom: 5vh; left: 50%; transform: translateX(-50%); cursor: pointer; text-decoration: none;"
+      aria-label="Scroll to research"
     >
       <div
         class="scroll-bob"
-        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 8px rgba(237, 234, 227, 0.4));"
+        style="color: var(--text-muted); display: flex; justify-content: center; filter: drop-shadow(0 0 12px rgba(237, 234, 227, 0.5)) drop-shadow(0 0 24px rgba(237, 234, 227, 0.25));"
       >
-        <svg width="20" height="12" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="24" height="14" viewBox="0 0 20 12" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M2 2L10 10L18 2" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </div>
-    </div>
+    </a>
 
 
   </section>
 
 
   <!-- ── RESEARCH ── -->
-  <section id="research" style="max-width: 1080px; margin: 0 auto; padding: 120px 0 80px;">
+  <section id="research" style="max-width: 1080px; margin: 0 auto; padding: 120px 0 80px; scroll-margin-top: 70px;">
     <h1 class="section-heading" style="font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 400; font-size: clamp(32px, 4vw, 42px); color: var(--text); line-height: 1.1; margin: 0 0 20px;">
       Research
     </h1>
@@ -153,8 +154,13 @@ import headshot from '../headshot.jpg'
           >
             Building an iPSC-derived motor neuron platform to study how meditation-induced plasma factors reshape neuronal bioenergetics, the next-generation human cellular model for Dr. Hemal Patel's research program at UCSD. Running the full differentiation protocol and developing a NanoSight NTA and Bradford bioanalytical pipeline to test pre- and post-meditation plasma.
           </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            iPSC &middot; MOTOR NEURON DIFFERENTIATION &middot; NANOSIGHT NTA &middot; BIOANALYTICAL ASSAY DEVELOPMENT &middot; NEUROTHERAPEUTICS &middot; EXTRACELLULAR VESICLES
+          <div class="case-tags" style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">
+            <span>iPSC</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>MOTOR NEURON DIFFERENTIATION</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>NANOSIGHT NTA</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>BIOANALYTICAL ASSAY DEVELOPMENT</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>NEUROTHERAPEUTICS</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>EXTRACELLULAR VESICLES</span>
           </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
@@ -178,8 +184,12 @@ import headshot from '../headshot.jpg'
           >
             Ran blind molecular docking of DMTS and DMDS against bovine serum albumin in AutoDock Vina to corroborate wet-lab binding data. Best-pose affinities (−2.6 / −2.3 kcal/mol) aligned with VTE and RED results, and shared binding geometries suggested a common transport mechanism for the parent compound and its active metabolite.
           </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            MOLECULAR DOCKING &middot; AUTODOCK VINA &middot; PYMOL &middot; PROTEIN BINDING &middot; PK MODELING
+          <div class="case-tags" style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">
+            <span>MOLECULAR DOCKING</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>AUTODOCK VINA</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>PYMOL</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>PROTEIN BINDING</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>PK MODELING</span>
           </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
@@ -203,8 +213,12 @@ import headshot from '../headshot.jpg'
           >
             Developed a vapor-phase protein binding assay (VTE) and a validated HPLC-UV method per ICH Q2(R1) to characterize how a volatile cyanide-antidote metabolite binds to human serum albumin. Triangulated with Rapid Equilibrium Dialysis (RED), diagnosed a 25% signal loss as surface partitioning rather than biology, and redesigned the RED plate seal to fix it.
           </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            VTE &middot; RED &middot; PROTEIN BINDING &middot; HPLC METHOD VALIDATION &middot; ADME/DMPK
+          <div class="case-tags" style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">
+            <span>VTE</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>RED</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>PROTEIN BINDING</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>HPLC METHOD VALIDATION</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>ADME/DMPK</span>
           </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
@@ -231,8 +245,13 @@ import headshot from '../headshot.jpg'
           >
             Ran cGMP batch-release testing on 50+ API batches/week using HPLC-UV/Vis and GC-FID, generated 600+ Certificates of Analysis, and validated two RP-HPLC methods per ICH Q2(R1). Supported two FDA audit-readiness reviews that closed with zero critical findings.
           </p>
-          <div style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent);">
-            cGMP &middot; HPLC &middot; GC-FID &middot; METHOD VALIDATION &middot; FDA AUDIT READINESS &middot; ICH Q2(R1)
+          <div class="case-tags" style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);">
+            <span>cGMP</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>HPLC</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>GC-FID</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>METHOD VALIDATION</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>FDA AUDIT READINESS</span> <span style="opacity: 0.3;">&middot;</span>
+            <span>ICH Q2(R1)</span>
           </div>
         </div>
         <div style="display: flex; justify-content: flex-end; padding-top: 6px;">
@@ -869,19 +888,26 @@ import headshot from '../headshot.jpg'
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 10000; /* Much higher than nav */
     align-items: center;
     justify-content: center;
-    padding: 24px;
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    background: rgba(0, 0, 0, 0.8);
+    padding: 16px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    background: rgba(0, 0, 0, 0.98); /* More opaque to hide background name */
     opacity: 0;
     transition: opacity 400ms var(--easing);
   }
   .training-modal.active {
     display: flex;
     opacity: 1;
+  }
+
+  /* Hide wordmark/nav when modal is active to prevent overlap */
+  :global(body:has(.training-modal.active)) :global(#site-nav) {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
   }
   .modal-content {
     background: rgba(14, 14, 16, 0.94);
@@ -938,13 +964,309 @@ import headshot from '../headshot.jpg'
       max-width: 340px !important; 
       margin: 0 auto;
     }
-    .case-card { grid-template-columns: 1fr !important; gap: 16px 0 !important; }
-    .case-card > div:last-child { justify-content: flex-start !important; }
     .about-grid { grid-template-columns: 1fr !important; gap: 48px !important; text-align: center; }
     .about-grid div:first-child { order: 2; }
     .about-grid div:last-child { order: 1; margin: 0 auto; }
     .about-btns { justify-content: center; }
-    .training-grid { grid-template-columns: 1fr !important; }
+    .case-card { 
+      grid-template-columns: 1fr !important; 
+      gap: 16px 0 !important; 
+      padding: 24px 0 !important; 
+      margin-top: 0 !important; 
+      border-top: 1px solid var(--rule) !important;
+    }
+    .case-card > div:last-child { justify-content: flex-start !important; }
+    .training-grid { grid-template-columns: 1fr 1fr !important; gap: 16px !important; }
+    .training-card { min-height: 100px !important; height: auto !important; padding: 20px !important; justify-content: center !important; }
+    .training-card h3, .typewriter-container p { font-size: 18px !important; }
+    .training-card p { display: none !important; }
+    .typewriter-container p { display: block !important; }
     .modal-content { padding: 40px 24px; }
+    .scroll-cue-btn svg { width: 16px; height: 10px; }
+    section { 
+      padding-left: 7vw !important; 
+      padding-right: 7vw !important; 
+      padding-top: 80px !important; 
+      padding-bottom: 80px !important;
+    }
+    h1.section-heading:not(.wordmark-link) { font-size: 32px !important; margin-bottom: 36px !important; }
+    h2.section-heading { font-size: 14px !important; letter-spacing: 0.15em !important; }
+    /* Target the div wrapper of subheadings */
+    h2.section-heading + div, .training-grid + div, .typewriter-container + div, section > div[style*="flex"] { 
+      margin-top: 56px !important; 
+      margin-bottom: 32px !important; 
+    }
+    .about-btns { margin-top: 32px !important; }
+    .pub-link { font-size: 14px !important; line-height: 1.5 !important; }
+    .about-grid p { font-size: 15px !important; line-height: 1.6 !important; }
+    .touch-button { height: 38px !important; padding: 0 20px !important; font-size: 14px !important; border-radius: 12px !important; }
+    .card-title { font-size: 26px !important; }
+    .case-card {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 12px !important;
+      padding: 32px 0 !important;
+    }
+    .case-card > span:first-child { 
+      padding-top: 0 !important; 
+      margin-bottom: 4px !important;
+    }
+    .case-card div[style*="justify-content: flex-end"] {
+      display: none !important; /* Hide "Read ->" on mobile to save space */
+    }
+    .typewriter-container {
+      height: 120px !important;
+    }
+  }
+
+  /* Phone-specific refinements */
+  @media (max-width: 480px) {
+    section { padding-top: 40px !important; padding-bottom: 40px !important; }
+    .training-grid { grid-template-columns: 1fr 1fr !important; gap: 12px !important; }
+    .training-card { padding: 12px !important; min-height: 80px !important; height: auto !important; justify-content: center !important; }
+    .training-card p { display: none !important; }
+    .training-card h3 { font-size: 14px !important; line-height: 1.2 !important; text-align: center; }
+    .typewriter-container { height: 80px !important; }
+    .typewriter-container p { font-size: 15px !important; line-height: 1.2 !important; display: block !important; }
+    .hero-headline span {
+      font-size: clamp(32px, 10vw, 42px) !important;
+    }
+    .hero-inner .animate-fade-rise-d600 {
+      font-size: 10px !important;
+      text-align: center;
+    }
+    .hero-inner .animate-fade-rise-d600 > div {
+      justify-content: center;
+      flex-wrap: nowrap !important;
+      white-space: nowrap;
+      gap: 3px 5px !important;
+    }
+    #research p, .case-card p, .about-grid p { text-align: left !important; font-size: 13px !important; line-height: 1.6 !important; }
+    .pub-link { font-size: 13px !important; line-height: 1.5 !important; }
+    .touch-button { height: 34px !important; padding: 0 16px !important; font-size: 12px !important; border-radius: 10px !important; white-space: nowrap !important; }
+    .about-btns { margin-top: 24px !important; justify-content: flex-start !important; }
+    .about-grid div:last-child div[style*="aspect-ratio: 1/1"] { 
+      max-width: 260px !important; 
+      margin-left: 0 !important; 
+      margin-right: auto !important; 
+    }
+    h1.section-heading:not(.wordmark-link) { font-size: 24px !important; margin-bottom: 24px !important; }
+    h2.section-heading { font-size: 13px !important; letter-spacing: 0.12em !important; }
+    /* Tighten subheading wrapper on phone */
+    h2.section-heading + div, .training-grid + div, .typewriter-container + div, section > div[style*="flex"] { 
+      margin-top: 40px !important; 
+      margin-bottom: 24px !important; 
+    }
+    .training-card span { font-size: 10px !important; } /* Dates and Tags */
+
+    /* Modal Typography Refinements */
+    .modal-content h2.section-heading {
+      font-size: 26px !important;
+      line-height: 1.2 !important;
+      margin-bottom: 8px !important;
+    }
+    .modal-content p[style*="italic"] {
+      font-size: 14px !important;
+      line-height: 1.4 !important;
+    }
+    .modal-content p[style*="margin: 8px 0 0"] {
+      font-size: 13px !important;
+    }
+    .modal-content div[style*="flex-direction: column"] p {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+    .modal-content div[style*="justify-content: space-between"] {
+      flex-direction: column-reverse !important;
+      align-items: flex-start !important;
+      gap: 16px !important;
+      margin-bottom: 24px !important;
+    }
+    .modal-content img[style*="height: 85px"], 
+    .modal-content img[style*="height: 80px"],
+    .modal-content img[style*="height: 60px"] {
+      height: 44px !important;
+      width: auto !important;
+      margin-left: 0 !important;
+    }
+    .modal-content div[style*="display: flex; align-items: center; gap: 24px"] {
+      flex-direction: row !important;
+      justify-content: flex-start !important; /* Left aligned */
+      width: 100% !important;
+      gap: 16px !important;
+    }
+    .close-modal {
+      top: 12px !important;
+      right: 12px !important;
+      z-index: 10001 !important;
+    }
+    .modal-content {
+      padding: 54px 20px 60px !important; /* Increased bottom padding for breathing room */
+    }
+    /* Ensure lists match body size */
+    .modal-content ul p, .modal-content li {
+      font-size: 13px !important;
+      line-height: 1.6 !important;
+    }
+    .modal-content h3 {
+      font-size: 20px !important;
+      line-height: 1.2 !important;
+      margin-top: 12px !important;
+      margin-bottom: 8px !important;
+    }
+
+    /* Extra tight header specifically for mentorship modal */
+    #modal-mentorship .modal-content {
+      padding-top: 32px !important;
+    }
+    #modal-mentorship .modal-content div[style*="justify-content: space-between"] {
+      margin-bottom: 4px !important;
+      gap: 12px !important;
+    }
+  }
+
+  /* Specific zoom for large-format phones (e.g. 430x932 iPhone Pro Max) */
+  @media (min-width: 414px) and (max-width: 440px) {
+    .wordmark-link { font-size: 18px !important; }
+    .hero-headline span { font-size: 52px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 12px !important; }
+    .about-grid div:last-child div[style*="aspect-ratio: 1/1"] { 
+      max-width: 310px !important; /* ~20% increase from 260px */
+    }
+  }
+
+  /* Specific zoom for tablet format (e.g. 768x1024 iPad) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .hero-headline > span { 
+      font-size: 58px !important; /* ~30% zoom */
+      text-align: center !important;
+      display: block !important;
+    }
+    .hero-headline .animate-fade-rise-d400 {
+      white-space: nowrap !important;
+    }
+    .hero-inner .animate-fade-rise-d600 {
+      font-size: 16px !important; /* ~15% zoom from 14px */
+      text-align: center !important;
+      justify-content: center !important;
+    }
+    .hero-inner .animate-fade-rise-d600 > div {
+      justify-content: center !important;
+    }
+  }
+
+  /* Specific zoom for 820x1180 iPad Air */
+  @media (min-width: 810px) and (max-width: 830px) {
+    .hero-headline > span { font-size: 67px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 18px !important; }
+    .hero-image-col div[style*="width: 40vw"] { width: 51vw !important; }
+  }
+
+  /* Specific zoom for 1024x1366 iPad Pro */
+  @media (min-width: 1020px) and (max-width: 1030px) {
+    .hero-headline > span { font-size: 90px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 24px !important; }
+    .hero-image-col div[style*="width: 40vw"] { width: 62vw !important; }
+  }
+
+  /* Specific zoom for 912x1368 Surface Pro / Tab S8 */
+  @media (min-width: 900px) and (max-width: 920px) {
+    .hero-headline > span { font-size: 87px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 24px !important; }
+    .hero-image-col div[style*="width: 40vw"] { width: 60vw !important; }
+  }
+
+  /* Specific reduction for 540x720 Surface Duo / Foldables */
+  @media (min-width: 530px) and (max-width: 550px) {
+    .hero-headline > span { font-size: 30px !important; }
+    .hero-inner .animate-fade-rise-d600 { 
+      font-size: 11px !important; 
+      text-align: center !important;
+      width: 100% !important;
+    }
+    .hero-inner .animate-fade-rise-d600 > div {
+      justify-content: center !important;
+    }
+    .hero-image-col div[style*="width: 40vw"] { width: 32vw !important; }
+  }
+
+  /* Specific zoom for 853x1280 Galaxy Tab S7/S8 */
+  @media (min-width: 850px) and (max-width: 860px) {
+    .hero-headline > span { font-size: 70px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 19px !important; }
+    .hero-image-col div[style*="width: 40vw"] { width: 48vw !important; }
+  }
+
+  /* Specific miniature desktop layout for 1024x600 */
+  @media (width: 1024px) and (height: 600px) {
+    .hero-inner { 
+      grid-template-columns: 60fr 40fr !important; 
+      text-align: left !important; 
+      gap: 0 !important;
+      align-items: center !important;
+    }
+    .hero-inner > div:first-child { padding-left: 10vw !important; padding-right: 2vw !important; }
+    .hero-headline > span { 
+      font-size: 44px !important; 
+      text-align: left !important; 
+      display: block !important;
+      line-height: 1.1 !important;
+    }
+    .hero-headline .animate-fade-rise-d400 {
+      white-space: nowrap !important;
+    }
+    .hero-image-col { order: 1 !important; display: flex !important; justify-content: flex-end !important; }
+    .hero-image-col > div { width: 30vw !important; max-width: 340px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 13px !important; text-align: left !important; margin-top: 20px !important; }
+    .hero-inner .animate-fade-rise-d600 > div { justify-content: flex-start !important; gap: 8px 12px !important; }
+    
+    section { padding-top: 60px !important; padding-bottom: 60px !important; }
+    h1.section-heading:not(.wordmark-link) { font-size: 28px !important; margin-bottom: 24px !important; }
+    .about-grid { grid-template-columns: 1fr 280px !important; text-align: left !important; gap: 40px !important; }
+    .about-grid div:first-child { order: 1 !important; }
+    .about-grid div:last-child { order: 2 !important; margin: 0 !important; max-width: 240px !important; }
+    .about-btns { justify-content: flex-start !important; margin-top: 24px !important; }
+    .case-card { padding: 24px 0 !important; flex-direction: row !important; gap: 32px !important; }
+    .card-title { font-size: 22px !important; }
+    .training-grid { gap: 16px !important; }
+    .training-card { padding: 20px !important; min-height: 80px !important; }
+    .training-card h3 { font-size: 15px !important; }
+  }
+
+  /* 4K Ultra-Wide Zoom (3840x2160) */
+  @media (min-width: 2560px) {
+    #hero, #research, #beyond-bench, #publications, #about { 
+      max-width: 2160px !important; 
+      margin-left: auto !important;
+      margin-right: auto !important;
+    }
+    .hero-inner { 
+      max-width: 2160px !important; 
+    }
+    .wordmark-link { font-size: 50px !important; }
+    .nav-link { font-size: 42px !important; }
+    #nav-links { gap: 84px !important; }
+    #site-nav { padding-top: 100px !important; padding-bottom: 100px !important; }
+    
+    .hero-headline span { font-size: 180px !important; }
+    .hero-inner .animate-fade-rise-d600 { font-size: 34px !important; margin-top: 48px !important; }
+    .hero-image-col > div { max-width: 1000px !important; }
+    
+    h1.section-heading:not(.wordmark-link) { font-size: 76px !important; margin-bottom: 50px !important; }
+    section p { font-size: 34px !important; }
+    
+    .case-card { padding: 100px 0 !important; grid-template-columns: 320px 1fr 240px !important; gap: 0 80px !important; }
+    .card-title { font-size: 58px !important; }
+    .case-card p { font-size: 28px !important; }
+    .case-tags { font-size: 20px !important; }
+    
+    .training-grid { gap: 50px !important; }
+    .training-card { padding: 75px !important; border-radius: 50px !important; }
+    .training-card h3 { font-size: 38px !important; }
+    
+    .about-grid { gap: 120px !important; grid-template-columns: 1fr 540px !important; }
+    .about-grid p { font-size: 28px !important; }
+    .about-grid div:last-child div[style*="aspect-ratio: 1/1"] { max-width: 540px !important; }
+    .touch-button { height: 85px !important; padding: 0 50px !important; font-size: 24px !important; border-radius: 24px !important; }
   }
 </style>

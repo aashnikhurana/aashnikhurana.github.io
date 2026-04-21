@@ -207,7 +207,7 @@ section, article {
 
 /* Mobile Typography Fixes */
 @media (max-width: 768px) {
-  .section-heading {
+  .section-heading:not(.wordmark-link) {
     font-size: clamp(26px, 8vw, 32px) !important;
   }
 }
