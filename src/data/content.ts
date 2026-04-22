@@ -45,7 +45,7 @@ export const about = {
     { year: '2022–2023',  label: 'Associate Scientist I, Anant Pharmaceuticals (India)' },
     { year: '2022',       label: 'BS Chemistry (Honors), Panjab University (India)' },
   ],
-  cvPath: '/cv/aashni-khurana-cv.pdf',
+  cvPath: '/resume/AashniKhurana_Resume.pdf',
 }
 
 export const research = {
